@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
+  <meta name="theme-color" content="#193e3c">
+  <meta name="description" content="记录客户的每一次沟通，把下一步安排清楚。">
+  <title>客户工作台 · 私人秘书</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <link rel="stylesheet" href="/static/account-intelligence.css">
+  <link rel="stylesheet" href="/static/customer-timeline.css">
+  <link rel="stylesheet" href="/static/secretary-workspace.css">
+  <link rel="stylesheet" href="/static/secretary-flow.css">
+  <link rel="stylesheet" href="/static/matters.css">
+  <link rel="stylesheet" href="/static/arrangement-queue.css">
+  <link rel="stylesheet" href="/static/detail-progress.css">
+  <script src="/static/app.js" defer></script>
+  <script src="/static/account-intelligence.js" defer></script>
+  <script src="/static/customer-timeline.js" defer></script>
+  <script src="/static/secretary-workspace.js" defer></script>
+  <script src="/static/secretary-flow.js" defer></script>
+  <script src="/static/secretary-attachments.js" defer></script>
+  <script src="/static/record-lifecycle.js" defer></script>
+  <script src="/static/secretary-history.js" defer></script>
+  <script src="/static/matters.js" defer></script>
+  <script src="/static/matter-routing.js" defer></script>
+  <script src="/static/arrangement-queue.js" defer></script>
+  <script src="/static/detail-progress.js" defer></script>
+</head>
+<body>
+  <section id="login-screen" class="login-screen">
+    <div class="login-story"><span class="brand-symbol">记</span><p class="eyebrow">YOUR PERSONAL WORKSPACE</p><h1>记下每次沟通，<br>从容推进下一步。</h1><p>随口记录，回来整理。<br>客户、跟进和安排，都在这里。</p><div class="login-note"><span class="note-dot"></span> 为每一段客户关系，留下一条清晰的线索。</div></div>
+    <div class="login-card"><p class="eyebrow">私人秘书 · 客户工作台</p><h2>欢迎回来</h2><p class="muted">输入后台口令，继续你的客户跟进。</p><form id="login-form"><label for="login-password">后台口令</label><input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="请输入后台登录口令"><p id="login-error" class="form-error" role="alert"></p><button type="submit" class="button primary wide">进入工作台 <span aria-hidden="true">↗</span></button></form><p class="login-foot">这是你的专属空间，只有登录后才能查看记录。</p></div>
+  </section>
+  <div id="app" class="app" hidden>
+    <aside class="sidebar" aria-label="主导航">
+      <a href="#dashboard" class="brand"><span class="brand-symbol">记</span><span>私人秘书<small>客户工作台</small></span></a>
+      <p class="nav-label">我的工作空间</p>
+      <nav id="main-nav"><button data-view="dashboard" class="nav-item active"><span class="nav-icon" data-icon="grid"></span><span>工作台</span></button><button data-view="overview" class="nav-item"><span class="nav-icon" data-icon="users"></span><span>总览</span></button><button data-view="discussions" class="nav-item"><span class="nav-icon" data-icon="chat"></span><span class="nav-discussion-desktop">AI跟进讨论</span><span class="nav-discussion-mobile">讨论</span></button><button data-view="inbox" class="nav-item"><span class="nav-icon" data-icon="inbox"></span><span>待整理</span><span id="nav-inbox-count" class="nav-count" hidden>0</span></button><button data-view="visits" class="nav-item"><span class="nav-icon" data-icon="chat"></span><span>客户交流</span></button><button data-view="materials" class="nav-item"><span class="nav-icon" data-icon="mic"></span><span class="nav-material-label"><span class="nav-material-desktop">录音与材料</span><span class="nav-material-mobile">材料</span></span></button><button data-view="customers" class="nav-item"><span class="nav-icon" data-icon="users"></span><span>客户</span></button><button data-view="records" class="nav-item"><span class="nav-icon" data-icon="check"></span><span>跟进事项</span></button><button data-view="agenda" class="nav-item"><span class="nav-icon" data-icon="calendar"></span><span>日程</span></button></nav>
+      <div class="sidebar-tip"><span data-icon="mic"></span><strong>想到什么，就记下来</strong><p id="sidebar-capture-tip">企业微信发来的一句话，<br>会成为这里的一条记录。</p><span class="tip-line"></span></div>
+      <div class="sidebar-bottom"><span class="avatar">我</span><div><strong>个人工作空间</strong><small id="connection-status">正在检查连接</small></div><button id="logout" class="icon-button" title="退出登录" aria-label="退出登录"><span data-icon="logout"></span></button></div>
+    </aside>
+    <div class="main-shell">
+      <div id="demo-banner" class="demo-banner" role="status" hidden>演示环境 · 示例数据，不发送真实提醒</div>
+      <div id="runtime-banner" class="runtime-banner" role="status" hidden></div>
+      <header class="topbar"><div class="breadcrumb">工作空间 <span>/</span> <strong id="breadcrumb-view">工作台</strong></div><form id="global-search-form" class="global-search" role="search"><span data-icon="search"></span><input id="global-search" type="search" aria-label="搜索跟进记录" placeholder="搜索记录、沟通内容…"><kbd>↵</kbd></form><button class="button usage-guide-entry" data-usage-guide aria-label="打开使用指引"><span data-icon="info"></span><span>使用指引</span></button><button class="button" data-review-inbox aria-label="打开统一待核对事项"><span>核对</span><span id="nav-review-count" class="draft-count" hidden>0</span></button><details id="record-entry-menu" class="quick-entry-menu"><summary class="button" aria-label="选择记录方式"><span data-icon="plus"></span><span>记录方式</span></summary><div class="quick-entry-panel"><button class="button" data-quick-capture><span>快速记一句话<small>先保留原话，客户和下一步稍后核对</small></span></button><button id="quick-command" class="button quick-command"><span>随口记 · 客户资料<small>从口述整理客户、联系人和画像</small></span></button><button class="button" data-audio-entry aria-label="录音、上传音频和行业热词"><span>语音 / 行业热词<small>录音转写、粘贴转写和识别词表</small></span></button><button id="new-record" class="button" aria-label="新建记录"><span>手动新建记录<small>直接填写交流纪要或具体待办</small></span></button><button id="mobile-logout" class="button mobile-logout" title="退出登录" aria-label="退出登录"><span data-icon="logout"></span><span>退出登录</span></button></div></details></header>
+      <main id="main" tabindex="-1"><div class="loading-state">正在加载工作空间…</div></main>
+      <footer class="main-footer"><span>每一次记录，都是下一步的起点。</span><span id="sync-status" role="status">北京时间 · 自动同步</span></footer>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title"><div id="detail-content"></div></dialog>
+  <dialog id="edit-dialog" class="edit-dialog" aria-labelledby="edit-title"><div id="edit-content"></div></dialog>
+</body>
+</html>

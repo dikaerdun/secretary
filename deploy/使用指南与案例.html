@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <title>客户秘书 · 使用指南与行业演练</title>
+  <style>
+    :root{--ink:#173a36;--sub:#536c65;--brand:#1d6651;--paper:#fff;--wash:#f4f7f2;--line:#d6e1d7;--note:#edf5ee;--warm:#fff5df;--accent:#c07127}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--wash);color:var(--ink);font:16px/1.75 "Microsoft YaHei","PingFang SC",system-ui,sans-serif}a{color:var(--brand);text-decoration-thickness:1px;text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #dcaa43;outline-offset:3px}button,a,input{touch-action:manipulation}main{max-width:1120px;margin:auto;padding:32px 26px 72px}h1,h2,h3,h4{line-height:1.4;letter-spacing:.01em}h1{font-size:36px;margin:12px 0 18px}h2{font-size:27px;margin:0 0 18px}h3{font-size:21px;margin:28px 0 12px}h4{font-size:18px;margin:16px 0 8px}p{margin:10px 0}ul,ol{padding-left:25px}li+li{margin-top:7px}.eyebrow{font-size:13px;letter-spacing:.12em;color:var(--brand);font-weight:700}.lead{font-size:19px;color:var(--sub);max-width:900px}.badge{display:inline-block;padding:2px 9px;margin:3px 5px 3px 0;border-radius:30px;background:var(--note);font-size:13px;font-weight:600}.badge.warm{background:var(--warm)}.hero{padding:28px 0 18px}.card,section.chapter{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:26px;margin:22px 0}.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}.cards .card{margin:0}.note,.expect,.check{border-radius:11px;padding:13px 16px;margin:14px 0;background:var(--note)}.note.warm{background:var(--warm)}.expect{border-left:4px solid var(--brand)}.expect strong,.check strong{display:block}.muted{color:var(--sub)}.small{font-size:14px}.toc{display:grid;grid-template-columns:1fr 1fr;gap:9px 20px;padding:0;list-style:none}.toc a{display:block;border-bottom:1px solid var(--line);padding:10px 2px;text-decoration:none}.toc li+li{margin:0}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:11px;margin:16px 0}table{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}td,th{text-align:left;vertical-align:top;padding:13px 15px;border-bottom:1px solid var(--line)}th{background:var(--note);font-weight:700}tr:last-child td{border-bottom:0}.narrow table{min-width:0}.step{padding:17px 0;border-top:1px solid var(--line)}.step:first-of-type{border-top:0}.step h4{margin-top:0}.step-no{display:inline-grid;place-items:center;width:29px;height:29px;background:var(--brand);color:white;border-radius:50%;font-size:15px;margin-right:8px}.route{font-weight:600;color:var(--brand)}.quote{border:1px solid var(--line);border-radius:13px;background:#fbfcf9;margin:17px 0;overflow:hidden}.quote-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 15px;border-bottom:1px solid var(--line);background:var(--note)}.quote-head strong{font-size:15px}.copy{border:1px solid #9fbcac;color:var(--brand);background:white;border-radius:8px;min-height:42px;padding:7px 13px;font-size:14px;flex-shrink:0}.quote pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:18px;font:15px/1.8 "Microsoft YaHei","PingFang SC",system-ui,sans-serif;color:var(--ink)}code{font:14px/1.7 Consolas,monospace;background:var(--note);padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}.flow{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:18px 0}.flow span{padding:7px 12px;border:1px solid var(--line);background:var(--note);border-radius:8px}.flow b{color:var(--brand)}.exercise{font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--accent)}details{border:1px solid var(--line);border-radius:11px;padding:13px 16px;margin:15px 0}summary{cursor:pointer;font-weight:600;min-height:32px}.date-setting{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:15px 0}.date-setting input{border:1px solid #9fbcac;border-radius:8px;padding:7px 11px;color:var(--ink);background:white;min-height:44px}.footer{color:var(--sub);font-size:14px;margin-top:24px}.back{display:inline-block;font-size:14px;margin-top:18px}.screen-reader{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}section{scroll-margin-top:24px}kbd{display:inline-block;border:1px solid #b6c5b7;border-radius:4px;padding:0 4px;font-size:13px;background:white}
+    @media(max-width:720px){main{padding:15px 14px 48px}h1{font-size:28px}h2{font-size:23px}h3{font-size:20px}.lead{font-size:17px}.card,section.chapter{padding:19px 16px;margin:17px 0;border-radius:13px}.cards{grid-template-columns:1fr;gap:13px}.toc{grid-template-columns:1fr}.hero{padding:16px 0 9px}.table-wrap{margin-left:-2px;margin-right:-2px}td,th{padding:11px 12px}.quote pre{padding:14px;font-size:15px}.quote-head{padding:10px 12px}.flow{gap:7px}.flow span{font-size:14px;padding:6px 9px}.narrow table{font-size:14px}.narrow td,.narrow th{padding:10px}.note,.expect,.check{padding:12px}a{overflow-wrap:anywhere}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    @media print{body{background:white}main{padding:0;max-width:none}.copy,.back,.date-setting,.toc{display:none}.card,section.chapter{break-inside:auto;border-radius:0}.quote,.expect,.note,tr{break-inside:avoid}.table-wrap{overflow:visible}a{color:inherit}h2,h3,h4{break-after:avoid}}
+  </style>
+</head>
+<body>
+<main id="top">
+  <header class="hero">
+    <p class="eyebrow">客户秘书 · 本机使用手册 · 2026-10-05</p>
+    <h1>记清每次交流，<br>把下一步推进到底。</h1>
+    <p class="lead">用三个虚构行业案例，练习从原话、客户与项目档案，到待办、安排、结果和接续行动的完整过程。每一步都有“成功时看到什么”，可以边打开应用边练。</p>
+    <span class="badge">示例客户、人员、金额均虚构</span><span class="badge">北京时间</span><span class="badge warm">演练整理为离线示例</span>
+  </header>
+
+  <div class="cards" aria-label="使用环境">
+    <article class="card">
+      <h2>先在独立演练版练习</h2>
+      <p><a href="http://127.0.0.1:8766/" target="_blank" rel="noopener">打开全批次演练工作台 · 8766</a></p>
+      <p class="small">本轮新增“QA合成密码银行”，用于统一准备稿、会前复盘和计划的完整练习。旧8766/8768演练资料仍保留；它们是否运行以实际服务为准。</p>
+      <p>公开演练口令：<code>learn-secretary-2026</code></p>
+      <p class="small muted">这份环境使用独立持久演练资料，已预置六组场景。初始状态见下表；实际练习后的变化以当前页面为准。</p>
+      <p class="small">演练模型只支持预置动作句式和本页指定的新增客户句。其他自由输入仍保存原话并提示演练理解范围；不代表真实 DeepSeek 已接通，专业语音识别也需独立配置。</p>
+    </article>
+    <article class="card">
+      <h2>正式本机资料继续使用</h2>
+      <p><a href="http://127.0.0.1:8765/" target="_blank" rel="noopener">打开本机工作台 · 8765</a></p>
+      <p>使用原有后台口令。本手册不包含正式口令。</p>
+      <p class="small muted">退出登录、停止和重启会保留已保存的客户资料。正式理解需配置真实整理模型；提醒在后台查看，到点不会在本机模式发送企微通知。</p>
+      <p class="small">准备练例句时，先看地址端口与环境提示，确保打开的是独立演练版。</p>
+    </article>
+  </div>
+
+  <section class="chapter" id="contents" aria-labelledby="contents-title">
+    <h2 id="contents-title">按这个顺序练</h2>
+    <ol class="toc"><li><a href="#detail-progress-guide">待办与安排详情：先处理这一件事</a></li>
+      <li><a href="#start">01 · 登录、选入口与练习日期</a></li>
+      <li><a href="#concepts">02 · 什么要记录，什么要确认</a></li>
+      <li><a href="#unified-matters">本次更新 · 一件事、多个动作、相关日程一起看</a></li>
+      <li><a href="#matter-cases">本次更新 · 电力汇报、约见与两个独立目标的三条流程</a></li>
+      <li><a href="#arrangement-queue">本次更新 · 待落实安排：定时间、等回复、改期与恢复</a></li>
+      <li><a href="#quick-capture">新版 · 一句话输入、双维度总览和 AI 讨论</a></li>
+      <li><a href="#ai-research">新增 · 让秘书研究单位、修改画像、讨论下一步</a></li>
+      <li><a href="#secretary-workspace">新增 · 统一准备稿、会前复盘、结果和推进计划</a></li>
+      <li><a href="#listen-workflow">录音习惯 · 聆记现场录音与口述复盘</a></li>
+      <li><a href="#account-intelligence">新版 · 单位、多位联系人、项目决策关系与智能画像</a></li>
+      <li><a href="#customer-timeline">新版 · 客户 / 联系人跟进历程与下一步讨论</a></li>
+      <li><a href="#case-one">03 · 澄川：新线索、无时间待办与画像</a></li>
+      <li><a href="#case-two">04 · 云岚：会议文字、复盘和多责任人</a></li>
+      <li><a href="#case-three">05 · 星浦：双项目、完成结果与接下一步</a></li>
+      <li><a href="#changes">06 · 从原事项改期与取消</a></li>
+      <li><a href="#waiting">07 · 等待客户，按检查日期回访</a></li>
+      <li><a href="#overdue">08 · 逾期事项，保存进展再推进</a></li>
+      <li><a href="#habits">09 · 每天、每周与日周月规划</a></li>
+      <li><a href="#repair">10 · 改错、重复、失败与草稿恢复</a></li>
+      <li><a href="#limits">11 · 当前限制与使用速查</a></li>
+    </ol>
+  </section>
+
+  <section class="chapter" id="start">
+    <h2>01 · 登录、选入口与练习日期</h2>
+    <div class="step"><h4><span class="step-no">1</span>打开演练入口</h4><p>在这台电脑打开 <a href="http://127.0.0.1:8766/" target="_blank" rel="noopener">127.0.0.1:8769</a>，在“后台口令”输入公开演练口令，点“进入工作台”。如果页面无法打开，先确认本轮演练服务已经启动。</p><div class="expect"><strong>成功时看到什么</strong>出现工作台、左侧导航与顶栏“使用指引”“核对”“记录方式”，并可看到演练环境提示。手机尺寸下导航可能收拢，“录音与材料”显示为“材料”。</div></div>
+    <div class="step"><h4><span class="step-no">2</span>先打开已有场景，再决定是否重做</h4><p>本轮演练客户是<strong>澄川精密制造集团</strong>、<strong>云岚市城运信息中心</strong>、<strong>星浦医疗科技集团</strong>。点顶栏“使用指引”，可看到记录、核对、安排、完成四步；在“独立离线演练”卡片点“打开客户工作台”“核对这次交流”或“打开跟进事项”直接进入对应场景。也可以在“客户”搜索名称，或在“跟进事项”“客户交流”“录音与材料”按下表标题查找。</p><p>已预置的场景先看原文、当前待办和待确认安排，再继续做后续步骤。只有想重练输入时才复制原话；可在新记录或交流标题末尾加“手工练习”，便于与预置资料区分。</p><div class="expect"><strong>成功时看到什么</strong>打开的客户名称正确；其“我的未完行动”“等待客户 / 配合反馈”“独立项目 / 商机”可以分别查看。已处理的建议可能已经离开“待核对”，可在其他状态或来源页回看。</div></div>
+    <div class="table-wrap"><table><thead><tr><th>使用指引里的场景名</th><th>查找已有记录／项目</th><th>首次生成时的状态</th></tr></thead><tbody>
+      <tr><td>新线索：无时间待办与事实／观察</td><td>澄川：展会后的数据库加密线索；发送数据库加密产品资料</td><td>客户资料已确认；待办已采纳，未安排执行时间。</td></tr>
+      <tr><td>正式会议：录音文本＋个人复盘</td><td>云岚：数据共享与商密整改技术交流</td><td>两份来源已整理，三项行动待采纳；没有确认个人执行日程。</td></tr>
+      <tr><td>同客户双项目：分别核对金额和审批</td><td>星浦：数据库透明加密试点；电子病历签名验签</td><td>两个独立项目已建立；金额与审批各自保存，来源分别关联项目。</td></tr>
+      <tr><td>完成结果与无时间下一步</td><td>星浦：提交透明加密测试报告；确认试点采购负责人</td><td>报告已完成，结果已保存；下一步已建立并关联透明加密项目，没有执行时间。</td></tr>
+      <tr><td>原任务：待确认改期与取消</td><td>星浦：原定数据脱敏POC演示；原定密码机选型交流</td><td>两条原日程仍生效；改期与取消各有待确认提案。</td></tr>
+      <tr><td>逾期推进与等待客户</td><td>澄川：发送密钥管理部署方案；星浦：等待客户确认测试环境</td><td>澄川安排 D−1 10:00，未完成；星浦只留客户执行与 D+3 检查日期。</td></tr>
+    </tbody></table></div>
+    <div class="note"><strong>本轮8769演练首次生成日 D 为2026-10-04，重启会保留这个锚点。</strong><p>已有场景以应用里显示的实际日期为准。本页的可复制原话会把 D、D+2 等展开为明确年月日；使用旧8766/8768环境或另建演练资料时，请把下面的基准日改为那份环境的首次启动日。</p><div class="date-setting"><label for="base-date">演练基准日 D</label><input id="base-date" type="date" value="2026-10-04"><span id="date-feedback" class="small" aria-live="polite"></span></div><p class="small">基准日只影响本页示例文字，不会修改应用中的任何日期。D−1：<span data-day="-1">2026-10-03</span>；D+2：<span data-day="2">2026-10-06</span>；D+3：<span data-day="3">2026-10-07</span>；D+4：<span data-day="4">2026-10-08</span>；D+5：<span data-day="5">2026-10-09</span>。</p></div>
+    <div class="table-wrap narrow"><table><thead><tr><th>客户已有联系人</th><th>角色</th></tr></thead><tbody><tr><td>澄川：许工</td><td>数据库负责人</td></tr><tr><td>云岚：周工</td><td>数据共享接口负责人</td></tr><tr><td>星浦：陈工</td><td>信息中心项目负责人</td></tr></tbody></table></div>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="concepts">
+    <h2>02 · 什么要记录，什么要确认</h2>
+    <div class="flow" aria-label="工作流程"><span>保留原话</span><b>→</b><span>整理与核对</span><b>→</b><span>采纳待办 / 等待事项</span><b>→</b><span>明确确认日程</span><b>→</b><span>记录结果与下一步</span></div>
+    <div class="table-wrap"><table><thead><tr><th>对象／入口</th><th>用来做什么</th><th>需要你决定什么</th></tr></thead><tbody>
+      <tr><td>记录方式 → 随口记 · 客户资料</td><td>快速输入一段交流、复盘或客户资料。也可先用输入法语音输入，再核对文字。每次最多6000字。</td><td>客户归属、事实和个人判断、具体行动；最后点“帮我整理”。</td></tr>
+      <tr><td>记录方式 → 手动新建记录</td><td>手动建立“交流纪要 · 保留现场信息”或“待办事项 · 需要后续执行”。</td><td>记录类型、客户、状态与内容；点“保存记录”。</td></tr>
+      <tr><td>客户交流</td><td>围绕同一次交流，集中现场录音、我的复盘、后续补充。</td><td>客户、实际发生时间、来源使用与逐项行动。不确定的实际时间可以留空。</td></tr>
+      <tr><td>录音与材料</td><td>保存长文字、会议纪要、聆记转写；原文和历史版本可回看。</td><td>客户、人物称呼、实际时间、专业词与行动依据。导入材料不要求先建客户。</td></tr>
+      <tr><td>客户与联系人</td><td>企业基本资料、联系人和逐次累积的画像。</td><td>AI提出的资料变更先“确认写入客户档案”；手动填写画像则明确选信息性质。</td></tr>
+      <tr><td>独立项目 / 商机</td><td>同一客户的不同交易分别维护。</td><td>项目金额与金额性质、审批、阶段、范围、采购路径、决策链、阻力、节点、联系人。</td></tr>
+      <tr><td>核对</td><td>统一查看客户资料、行动与日程提案。</td><td>采纳、不采纳、稍后处理、恢复；资料和日程分别确认。</td></tr>
+      <tr><td>跟进事项</td><td>围绕一个持续目标，把推进动作、相关安排、沟通与材料一起看。旧资料在“查看原始记录”保留。</td><td>这件事要达到什么结果、下一步做什么；有明确时间时再核对安排。</td></tr>
+      <tr><td>待落实安排</td><td>把想到的未来活动留在同一处，逐步定日期、钟点和约定。</td><td>先看当前缺口；确定安排的期限、下次推进点、实际活动时间分别记录。</td></tr>
+      <tr><td>日程</td><td>查看已生效执行安排，以及有日期但仍需完善的计划。</td><td>完整、明确的个人安排可直接落实；要求先核对或使用日程提案时再确认。未设置提前提醒也能建立日程；只有日期不猜钟点。</td></tr>
+    </tbody></table></div>
+    <div class="check"><strong>三类不同的决定</strong>写入客户档案决定资料；采纳为待办决定是否推进；安排日程决定具体执行时间。完整安排指令无需重复确认，AI建议或你要求先核对的方案仍需确认。日程没有提前提醒，不代表安排没生效。</div>
+    <p>原始记录和动作仍有“待整理”“跟进中”“已完成”；新版统一事项使用“跟进中”“等待反馈”“暂缓”“已结束”，它们表达的是整个目标的状态。项目阶段为“新线索”“已接触”“需求确认”“方案报价”“商务沟通”“已成交”“暂缓跟进”。阶段应按真实进展维护，不从金额或一句“有兴趣”推断成交。</p>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="unified-matters">
+    <p class="exercise">本次更新 · 按目标持续推进</p>
+    <h2>一件事，放在一处继续做</h2>
+    <p>“准备好下次电力方案汇报”是一件事。重组 PPT、补充产品化内容是它的两个动作；和客户约一次汇报是相关日程；现场原话、项目材料和 AI 讨论是推进这件事的依据。你不必在几个列表中拼回同一个目标。</p>
+    <div class="flow" aria-label="统一事项使用流程"><span>随口说一句</span><b>→</b><span>核对补入哪件事</span><b>→</b><span>在同一处补充、讨论</span><b>→</b><span>落实动作和时间</span><b>→</b><span>记结果，再决定目标是否结束</span></div>
+    <div class="table-wrap"><table><thead><tr><th>你要看什么</th><th>在哪里看</th><th>怎样继续</th></tr></thead><tbody>
+      <tr><td>我在推进的事情</td><td>工作台“我在跟进的事情”，或导航“跟进事项”</td><td>每件事一张卡片，显示目标、下一步、动作完成数和最近安排；点标题或“继续这件事”。</td></tr>
+      <tr><td>具体需要做的步骤</td><td>事项详情“待完成动作”；列表卡片“查看全部动作”</td><td>点“查看 / 记结果”进入原动作。已完成动作收在折叠区，原始内容和结果继续保留。</td></tr>
+      <tr><td>什么时候去做</td><td>事项详情“时间安排”；导航“日程”的日、周、月视角</td><td>同一安排可从两个入口查看。日程按实际活动计算，不为每个准备动作复制一次会面。</td></tr>
+      <tr><td>之前说了什么、根据什么判断</td><td>事项详情“沟通与进展历程”“原话与相关资料”</td><td>展开回看原话、结果、客户交流、材料和讨论，再在上方继续告诉秘书。</td></tr>
+    </tbody></table></div>
+    <h3>只看某个项目正在推进的事</h3>
+    <p>在<strong>总览 → 项目</strong>，点项目卡片的<strong>查看本项目的全部事项</strong>。列表和搜索只看当前项目；点“返回项目总览”回看其他项目，或用普通“跟进事项”导航回到全部范围。在项目事项里继续补充，新动作沿用该目标的明确项目。</p>
+    <p>项目卡片的<strong>已归组动作</strong>是统一目标下的动作进度；<strong>原项目行动明细</strong>默认折叠，用于回看原先直接关联项目的旧记录。两者口径不同，不能相加，也不代表完成几个准备动作就完成了整个项目。</p>
+    <h3>新一句话怎样接到原来的事情</h3>
+    <ol>
+      <li>工作台直接输入，或打开具体事项，在“继续补充这件事”的输入框里说新进展。看清“正在补充”的事项名称；新目标先点<strong>另记一件事</strong>。</li>
+      <li>已配置模型时，秘书结合已有目标、客户和项目判断是续办、新事还是资料。回执显示<strong>已建立事项</strong>或<strong>已补入事项</strong>。只有客户相同、来源相同，不能证明是同一个目标。</li>
+      <li>有多个可能目标时，先保留原话，显示候选；点候选或<strong>这是另一件事</strong>，在“核对这句话归哪件事”里确认。不能确定客户、项目或步骤时，继续补充，不会替你猜一个执行时间。</li>
+      <li>只是资料、感受或客户背景时，可先保留为原话；不强行造一个待办。要落地时，回到目标说明“下一步我要做什么”，或在 AI 讨论中核对后采纳行动。</li>
+    </ol>
+    <div class="note warm"><strong>自动理解与正式执行分开看。</strong><p>你明确说出的个人动作、已知步骤的新进展可以由秘书整理；模型推测的建议仍需采纳。录音里的承诺先核对来源与责任人，不能当作你在当前对话中下达的执行命令。缺少模型时使用保守规则，页面结果以实际配置和回执为准；本页例句不是外部模型效果保证。</p></div>
+    <h3>归错、归组与拆分，都能先看影响</h3>
+    <ul>
+      <li><strong>一句话归错：</strong>在该条回执点“归错了”，选已有事项或“这是另一件事”，再点“确认归属”。这只调整本次原话、新建步骤和材料的关联，不重新运行 AI、不重做已完成步骤、不改原日程。已经记入旧步骤的进展仍留在原处；需要更正业务结果时，打开原动作核对。</li>
+      <li><strong>旧数据还没有归到事项：</strong>“跟进事项 → 核对历史归组 → 核对这次归组”。改成一个清楚的目标，勾选确实服务该目标的动作，再点“确认归成一件事”。原客户数据、原话和动作不会自动归组，打开建议也不会改变资料。候选没有覆盖的内容仍能从“查看原始记录”使用。</li>
+      <li><strong>本来是一件事，却分成了两件：</strong>打开其中一件，点“更多 → 归入另一件事”，选择同单位、同项目的保留事项，核对合并影响后确认。归出事项收起，原动作、原材料、原安排保留。</li>
+      <li><strong>本来是两个目标，却混在一件：</strong>“更多 → 拆出独立的事情”，只勾选独立目标的动作，写新名称和要达到的结果，先预览再确认。拆分后核对两个事项的时间安排；不要把共同的会面再建一次。</li>
+      <li><strong>想撤销关联变化：</strong>展开事项详情“归组与变更历史”，点“查看撤销影响”，核对后“确认撤销”。后续已有新修改时可能阻止撤销，以免覆盖新进展；此时先查看最新事项，原记录仍在。</li>
+    </ul>
+    <p class="small muted">确认有歧义的原话归属，不代表原先待核对的建议已经采纳。归属核对窗口不会再次生成动作；返回该事项继续说明要做的事，或核对原资料中的行动建议。</p>
+    <h3>和 AI 讨论，再把建议加入同一件事</h3>
+    <ol>
+      <li>从事项详情点<strong>与 AI 讨论下一步</strong>。已知的单位和项目沿用该事项；没有客户时，先选择本次讨论针对的客户。</li>
+      <li>问具体的推进问题，例如“材料还缺什么证据，下一次汇报怎样让客户明确试点范围？”秘书参考当前目标、相关动作、资料和安排，建议与客户已确认事实分别保留。</li>
+      <li>点建议的采纳入口，核对标题、谁来推进和相关人，必要时修改材料或完成标志。采用后的动作留在该事项中；没有时间先留未排期待办，具体时间另行核对。</li>
+      <li>目标、资料或归属有新变化时，旧建议可能不能直接采用；结合新进展重新讨论。归档、回收站或已结束事项可以回看讨论，恢复或重新设为跟进中后再继续推进。</li>
+    </ol>
+    <h3>三种“完成”不要混在一起</h3>
+    <div class="table-wrap"><table><thead><tr><th>完成了什么</th><th>记录什么</th><th>这件事接下来怎样</th></tr></thead><tbody>
+      <tr><td>原话已经整理</td><td>保留整理结果和来源</td><td>不代表动作完成，更不代表目标达成。</td></tr>
+      <tr><td>PPT 或其他准备动作做好</td><td>在该动作里记结果</td><td>会议尚未进行，目标继续跟进；未完成的动作仍在。</td></tr>
+      <tr><td>一次见面已结束</td><td>完成本次日程，补实际交流和复盘</td><td>客户可能还在等方案或审批，目标不自动结束。</td></tr>
+      <tr><td>整个目标已达成，或决定不再推进</td><td>“更多 → 目标 / 事项状态”，选“已结束”和结束原因</td><td>保留全部记录。已有安排不会自动取消，需要取消时核对原安排。</td></tr>
+    </tbody></table></div>
+    <h3>收起事项时，先决定提醒要不要保留</h3>
+    <p>“更多 → 归档”用于暂时收起，“移到回收站”用于不再需要的临时想法。窗口先列仍有效的安排，再选<strong>保留已有安排与提醒</strong>（默认）或<strong>停止关联的有效提醒</strong>。保留时事项从日常列表隐藏，日程仍然有效；共享安排和新状态有冲突时会阻止提交，先重新核对。</p>
+    <p>在“跟进事项 → 已归档 / 回收站”打开后可点“恢复事项”。恢复只恢复展示，已停止或取消的提醒不会重新启动；撤销归组也不会启动提醒。本机版到点通知能力仍以实际运行模式为准，不能把保存安排当成已送达企业微信。</p>
+    <div class="check"><strong>每天只记住两个入口</strong>推进哪件事：打开“跟进事项”，在同一处继续说、看步骤和资料。什么时候去做：打开“日程”，看实际安排，需要继续业务时回到它的所属事项。</div>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="matter-cases">
+    <h2>三条流程：从一句话到持续推进</h2>
+    <p class="note warm">以下为虚构操作示例，不会自动写入你的客户资料，也未声称演练环境已预置这些事项。可先在独立演练环境练习；离线模型只支持已有固定句式，其他原话仍会保存。使用正式模型时，核对回执、归属和实际结果，不为练习重写已有客户记录。</p>
+    <article class="step">
+      <h3>案例一 · 一次电力汇报，两个准备动作</h3>
+      <p><strong>目标：</strong>准备一份能向客户讲清电力密码产品的汇报材料，而不是把“改结构”“补产品”当成两个互不相关的事项。</p>
+      <div class="quote"><div class="quote-head"><strong>在首页说这一段</strong><button type="button" class="copy" data-copy="matter-example-power">复制示例</button></div><pre id="matter-example-power">我要给澄川集团做电力密码方案汇报，先按产品线重组电力PPT，再补充配网主站指令防篡改装置的产品化内容。这两步都是为了准备同一次汇报，时间还没定。</pre></div>
+      <ol><li>保存后核对“准备电力密码方案汇报”这一目标及客户归属。模型已明确识别时，在同一件事里看两个准备动作；若结果拆散，从“归入另一件事”核对共同目标后合并。</li><li>如果这两条动作本来已存在，先用“核对历史归组”，勾选它们、调整名称和目标；不用把旧话再输入一遍。</li><li>从该事项继续说“PPT结构改好了，产品化内容还差部署边界和验收指标”。核对是原步骤的新进展，不能把仍需补充的内容一起算完成。</li><li>点“与 AI 讨论下一步”，问“这次汇报先展示哪些证据更容易让对方明确试点？”有用建议核对后采纳到同一事项。</li><li>约定汇报时间后，从同一事项补日期和钟点，核对实际安排。汇报完成后记录客户反馈，再决定是继续试点推进还是结束当前目标。</li></ol>
+      <div class="expect"><strong>成功时看到什么</strong>跟进列表是一件汇报事项，内部有多个准备动作；时间明确后有一场相关安排。准备动作完成不把尚未进行的汇报标为目标达成。</div>
+    </article>
+    <article class="step">
+      <h3>案例二 · 先约见，再补目标、材料和复盘</h3>
+      <p><strong>目标：</strong>在不了解完整安排时先记住，随后只补一句话。</p>
+      <div class="quote"><div class="quote-head"><strong>先说日期和人</strong><button type="button" class="copy" data-copy="matter-example-appointment">复制示例</button></div><pre id="matter-example-appointment" data-date-template>{{date:4}}约星浦的陈工吃饭。</pre></div>
+      <ol><li>先看该日期的“待约 / 时间待定”计划。没有钟点，不应看到系统猜出的执行时刻或已启用提醒。</li><li>点计划或所属事项，在同一输入处补“聊数据库透明加密试点的汇报材料，晚上六点，已经约好，提前一小时提醒”，并添加已有项目材料附件。核对客户、项目、会面时刻和提醒时刻。</li><li>会前在这件事里讨论“我应当争取陈工确认哪两件事？”采纳可落实的准备动作；不要把 AI 对陈工态度的推测写成已确认画像。</li><li>会后打开同一件事说“饭吃完了，复盘：陈工认可先做兼容测试，但预算还没审批。下一步我先发测试条件清单”。保留实际反馈与自己的判断，核对下一步责任。</li><li>会面结束但试点目标未达成，继续跟进或等待反馈。需要回访时补实际日期；没有明确日期的动作继续留未排期。</li></ol>
+      <div class="expect"><strong>成功时看到什么</strong>最初日期、后补目标、附件、会面和复盘能从同一目标继续查看；日程是一场会面，资料准备和会后动作没有重复造会面。</div>
+    </article>
+    <article class="step">
+      <h3>案例三 · 同一个客户，两个独立目标</h3>
+      <p><strong>目标：</strong>同一次输入也能包含不同事情；同一客户或同一段原话不能作为强行合并的理由。</p>
+      <div class="quote"><div class="quote-head"><strong>明确说出两个不同目标</strong><button type="button" class="copy" data-copy="matter-example-two-goals">复制示例</button></div><pre id="matter-example-two-goals">星浦有两件独立的事：数据库透明加密试点要确认测试环境和兼容范围；电子病历签名验签项目要了解采购牵头人和审批流程。两个项目分开推进，不要混成一个待办。</pre></div>
+      <ol><li>保存并核对两个独立目标及各自项目。模型明确识别出不同目标时，分别建立事项；只得到一个不清楚的目标时，先核对，或打开“拆出独立的事情”，选对应动作。</li><li>打开数据库试点事项补“陈工说测试环境可以了，兼容范围还等运维确认”；这句话不能自动写进签名验签项目。标题或称呼不精确时，看候选后选择。</li><li>再点“另记一件事”，或直接打开签名验签事项，补其采购角色的新线索。不同项目的决策人、权限和预算分别核实。</li><li>如果一次会议同时讨论两个项目，记录为一场实际交流；已有活动关联多个目标时，分别在目标里引用，日程仍只计算一次。不要为两个议题重复排两场相同会面。</li><li>AI 讨论从具体事项启动；一个项目准备动作完成，不自动完成另一个项目。不同客户或项目的事项不能从“归入另一件事”直接合并。</li></ol>
+      <div class="expect"><strong>成功时看到什么</strong>同一客户下分别看两个目标，各有下一步和依据；引用同一来源不改变两个目标的独立性。需要核对时先留原话，避免误归后继续推进。</div>
+    </article>
+    <a class="back" href="#unified-matters">回到本次更新说明 ↑</a>
+  </section>
+
+  <section class="chapter" id="arrangement-queue">
+    <h2>待落实安排：秘书帮你把活动定下来</h2>
+    <p>想到一次拜访、培训或电话，就在工作台告诉秘书。信息不完整也先留下。回执点<strong>查看这次计划</strong>，或从<strong>待落实安排</strong>继续。队列初次打开显示<strong>全部待落实</strong>，没有期限、没有回看点的活动也在；“今天”“本周”“本月”是筛选，局部为空时可以回到全部。</p>
+    <p>想只看同一个对象，点卡片归属的客户、联系人或项目名称；在事项的时间安排处，也可以查看该事项的全部安排。切换“今天”“全部”等筛选仍保留当前对象范围；清除当前对象范围后，回到所有对象的安排。</p>
+    <div class="table-wrap"><table><thead><tr><th>你在说什么</th><th>秘书如何记录</th><th>不会混到哪里</th></tr></thead><tbody>
+      <tr><td>本周把下月拜访时间定下来</td><td>本周是<strong>确定安排的期限</strong>，下月是拟执行范围。</td><td>不会把本周末当成拜访钟点。</td></tr>
+      <tr><td>周五再问一下对方</td><td><strong>下一推进点</strong>：周五回看回复或联系对方。</td><td>不会因此创建一场周五拜访。</td></tr>
+      <tr><td>下周四下午三点已约好，按这个安排</td><td>依据齐全时落实<strong>实际活动时间</strong>。</td><td>执行日程与推进提示分别保存。</td></tr>
+      <tr><td>提前一小时提醒；或者不用提醒</td><td><strong>执行提醒</strong>按你的明确选择保存。</td><td>不用提前提醒仍可安排日程。</td></tr>
+    </tbody></table></div>
+    <p>“本周去拜访”表示执行范围；“本周约一下”含义不明时先核对是这周去还是这周定时间。只说日期、上午或下午时，页面保留这种精度，不冒充你说了某个钟点。</p>
+    <h3>流程一 · 自己能决定的安排</h3>
+    <ol><li>说<code>本周把下个月培训时间定下来，讲义还要准备。</code>先保留待落实安排与准备工作。</li><li>在同一计划继续说<code>安排11月12日下午三点，我给团队培训，不用提醒。</code>自己能决定、时间明确时直接落实，不要求客户答应，也不追问默认提前多久。</li><li>从日程看实际活动；讲义准备仍是关联待办。时间定下不表示讲义完成，培训结束也不表示整个项目结束。</li></ol>
+    <h3>流程二 · 等对方回复，先日期再钟点</h3>
+    <ol><li>说<code>本周把下周拜访定下来，周五再问客户。</code>在同一计划记录期限与下一推进点。</li><li>发了两个候选就补候选；你选一个日期，仅代表自己的选择，仍要看对方是否答应。</li><li>如果只需先定哪天，明确说<code>先定日期即可，对方确认12号，几点没定。</code>日程显示“日期已定，钟点待定”，不生成猜测时刻的日程。</li><li>点<strong>继续确定钟点</strong>。日期没变就保留已同意的日期；补<code>我想安排12号15点，等他确认钟点。</code>只等待这个钟点的回复。再说对方已同意15点、按此安排，落实同一计划。对方确认日期却不同意某个钟点时，保留日期，钟点继续商量。</li></ol>
+    <h3>流程三 · 改期时仍看得见原安排</h3>
+    <ol><li>已有周四安排，再说<code>可能改周五，等他回复。</code>页面同时显示<strong>当前有效安排</strong>和<strong>拟改安排</strong>。</li><li><code>改期，时间还没定。</code>保留原有效日程及执行提醒。只有明确说<code>原时间不去了，新时间还没定。</code>才撤销原日程；原话和取消历史保留。</li><li>新时间有冲突，先继续选时间，原安排仍有效。新安排核对通过后更新同一日程，旧执行提醒失效。</li><li>只是停止讨论改期，选<strong>放弃本轮协调</strong>；只想暂时别催，选<strong>暂缓协调</strong>，状态显示“暂缓推进”。这两项都不取消有效活动。确实不举办才选<strong>取消这次活动</strong>并核对影响。</li></ol>
+    <h3>流程四 · 超过期限、暂缓与恢复</h3>
+    <ol><li>“希望本月定下来”和“最晚本月必须定下来”分别显示希望期限、最晚期限。超过期限仍保留安排，你可以记录进展、改期限或暂缓。</li><li>说<code>问过了，仍没回复，周五上午再看。</code>记录实际推进，给一个新回看点。只说“还在等”不会冒充已经联系过。未启用自动推进策略时，秘书只建议新点，不无限催问。</li><li>点<strong>恢复协调</strong>重新推进，明确选沿用仍有效的点、现在推进或新的点。旧点已经过期则需要重新选择，不补发一串历史提示。</li><li>来源归档或回收后再恢复，只恢复可见性；要重新催办，还需明确<strong>恢复协调</strong>。归档安排前核对窗口里的执行日程影响，不凭“收起来”推断活动已取消。</li></ol>
+    <div class="note"><strong>网页提醒怎么用</strong><p>同一安排同一天的推进、临近期限或超期原因汇在一张提醒卡中。标记已读只表示看过，不代表问过客户或安排已落实。明确说“周五再看”后，回看前遵守安静期；到点展示当前有效原因。页面关闭不丢到期状态，服务运行后重新打开可见。这是网页提示，不能据此判断手机或企业微信已经送达。</p></div>
+    <p>如果想让秘书在没给推进点时自动采用建议，从队列<strong>提醒设置</strong>启用默认推进策略。默认关闭；已有明确回看点优先，设置不会改写已建立安排。具体操作与当前状态始终以计划回执为准。</p>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="quick-capture">
+    <h2>新版：像对真实秘书一样说话</h2>
+    <h3>临时想法没有价值，或者暂时不想推进</h3><p>新版统一事项从<strong>更多 → 归档 / 移到回收站</strong>收起，先核对已有安排，选择保留或停止关联提醒，默认保留。原话和附件继续保留，归档不等于取消日程。原始记录或计划也有各自的“归档 / 删除”入口，按该窗口列出的影响核对；独立采纳的其他待办不会因收起一条提示自动结束。</p><p>从“跟进事项 → <strong>已归档 / 回收站</strong>”可以恢复统一事项；已停止的提醒不会自动重新启动。没有具体事项的销售提示，可点<strong>归档提示</strong>，仅收起这条提示，客户资料不受影响。详细操作见<a href="#unified-matters">统一事项说明</a>。</p>
+    <p>打开工作台，在首页输入框写一句话，点<strong>告诉秘书</strong>。系统先保存原话，再给回执；明确的安排直接执行，缺少的信息只追问当前最关键的一项。输入框上方会显示<strong>正在补充哪件事</strong>。要记新的事情，先点<strong>另记一件事</strong>。</p>
+    <p>对话框下方的<strong>最近记录</strong>默认折叠。点<strong>另记一件事</strong>，当前讨论会收进最近记录，输入框切换到空白新事情；同一计划的多轮讨论只显示一条。展开最近记录，点对应标题，就能回到这件事继续补充、安排和复盘。普通记录可以回看原话，再点“补充 / 处理原记录”。未发送的文字和附件也会保留为这个浏览器里的草稿，点回即可继续编辑。</p>
+    <p>收起讨论只改变显示位置，已有待办和提醒照常保留。如果事情不再需要推进，请用<strong>归档 / 删除</strong>，窗口会先说明对关联安排的影响。</p>
+    <div class="quote"><div class="quote-head"><strong>案例一：从一句约饭，到准备与提醒</strong></div><pre>10月8日约林博士吃饭。
+
+秘书问这次目标后，回答：
+主要聊产品合作方向，顺带确认下次会议议题。晚上六点，已经约好了，提前一个小时提醒。</pre></div>
+    <ol><li>第一句话先生成10月8日的“待约 / 时间待定”计划，没有钟点时不猜具体时间。</li><li>第二句话自动填好目标、议题、约定状态和时间：18:00会面，17:00提醒；两者分别保存。</li><li>点“查看这次计划”，可以在同一处回看原话、讨论准备内容、关联客户和录音。</li></ol>
+    <p><strong>在日程里查看。</strong>日、周、月按实际日期查看已安排和日期明确的待约计划，标题旁标明状态；只知道日期时显示“时间待定”，尚未约定时显示“待确认”。点<strong>完善安排</strong>回到同一计划继续说。没有具体日期的未来活动从<strong>待落实安排 → 全部</strong>找，不能靠某月日历判断它是否存在。已安排事项可<strong>记跟进结果</strong>或<strong>查看 / 改期</strong>；<strong>更多</strong>保留“仅完成日程”“安排下一次”。日程完成只结束这次活动；保存业务结果后，整个事项目标是否达成仍单独决定。</p>
+    <h3>项目材料和一句话一起发</h3><p>在首页、计划补充或 AI 跟进讨论的聊天框点<strong>添加附件</strong>。例如说“10月8日约何川吃饭，聊这份项目汇报，帮我准备”，附上方案后点发送。无需再填写材料类别；明确客户和项目后材料沿用此次归属，不明确时先保留，不猜归属。</p><p>PDF、Word（docx）、PPT（pptx）、Excel（xlsx）、文本可读取正文；每份最多20MB，每次最多10份。图片、扫描PDF或旧Office文件仍保存原件；正文读不出时，打开材料页<strong>补充材料文字</strong>，或转换成标准格式重新上传。秘书会说明未能读出的材料，不编造内容。</p><p>打开“秘书为这次交流准备的建议”看议题和准备清单；若引用文件，可展开“查看材料依据”对照原文。计划里点<strong>与 AI 讨论如何推进</strong>，材料继续作为参考，也可在讨论框追加新文件。所有附件可以从计划或“录音与材料”回看并下载原件。</p><p>明确归属的材料会持续进入<strong>待核对画像</strong>，携带出处和版本。它们默认是“文件记载／待核实观察”，你的确认后才写入画像；方案的预算假设不代表客户已审批，AI建议仍需采纳才成为待办。会后在同一计划补充复盘，保留文件与真实反馈的区别。</p>
+    <div class="quote"><div class="quote-head"><strong>案例二：临时修改，不再重新填表</strong></div><pre>改到9号晚上六点半，title先不谈。
+
+或：改期，时间还没定。
+
+或：取消这次饭局。</pre></div>
+    <p>在这次计划的输入框继续说。<strong>改期，时间还没定</strong>保留当前有效日程和执行提醒，拟改时间在旁边继续协调；明确说<strong>原时间不去了</strong>才撤销原安排。新时间确定并核对通过后，更新同一日程、停止旧执行提醒；遇到冲突时原日程仍生效。<strong>取消这次饭局</strong>取消本次活动，<strong>暂缓推进</strong>只暂停催定时间，二者影响不同。原话和修改历史保留，详见<a href="#arrangement-queue">待落实安排流程</a>。</p>
+    <div class="quote"><div class="quote-head"><strong>案例三：结束后复盘，成为长期客户资料</strong></div><pre>饭吃完了，复盘：林博士更关心技术落地，愿意先看试点方案；对外title这次没有谈。我们下一步先讨论试点范围。</pre></div>
+    <p>仍在这次计划里输入，复盘会与会前准备、原始录音归到同一次交流。有明确客户或联系人关联时，也能从他的跟进历程回看。AI给出的可选建议，只有你点“加入我的跟进”后才成为待办；想新增一个提醒，点“另记一件事”后直接说安排。</p>
+    <p>在“我的业务 / 提醒习惯”告诉秘书你的产品、优势、案例和默认提前提醒。未知单位的新联系人也可直接口述，之后从“新认识的人”选择单位和已有联系人归档。联系人称呼不完整时，秘书会尽力识别；有歧义时给候选对象供你点选。</p>
+    <div class="note">当前本机版本在网页显示提醒。企业微信真实手机送达需要企业微信连接成功；聆记仍按实际已提供的MCP能力导入，不会假装已经自动获取全部录音。录音内容作为资料保存，不会把别人说的话直接当作你的安排指令。</div>
+    <p class="exercise">新版入口 · 从随手记录到实际跟进</p>
+    <h2>先记一句话，再决定它怎么帮你</h2>
+    <p>打开“工作台”，直接在“想到什么，先告诉秘书”的输入框写一句话。无需先建客户，也无需先选项目。点“告诉秘书”后原话马上留在本机，秘书在后台理解；继续说可以补充当前事情，要开始新事情时点“另记一件事”。“语音 / 转写”也通过同样的保存入口进入核对流程。如果输入“帮我研究某单位，做单位画像”这样的研究目标，会先选择研究单位，再进入准备稿；目标不会写成客户实际交流。</p>
+    <p>在其他页面想到事情时，打开顶栏“记录方式”→“快速记一句话”，会打开独立输入窗口，先保存新事情。客户资料与喜好用“随口记 · 客户资料”；需要自己明确填写类型时用“手动新建记录”。录音和行业热词也在这个菜单中。</p>
+    <div class="quote"><div class="quote-head"><strong>可复制 · 不说完整客户名称的演练例句</strong><button class="copy" type="button" data-copy="capture-example">复制原话</button></div><pre id="capture-example">昨天医院陈工那个签名项目。我答应整理病历签名接口问题，没有约定执行时间。</pre></div>
+    <div class="note warm">这句模糊归属是固定离线演练。正式版才由已配置的大模型结合客户、联系人、项目与近期记录识别；演练表现不能用来评价真实语音或模型准确率。</div>
+    <ol>
+      <li><strong>保存原话。</strong>点首页保存，看到“原话已保存”。“最近记录”会显示后台处理进度。失败时也能打开原记录补充；不要因为没有结果反复建立相同记录。</li>
+      <li><strong>核对归属。</strong>点“去核对这条记录”，看候选及理由。例如演练中的“陈工＋签名”会建议星浦医疗科技集团的电子病历签名项目。确认是该客户后再选定；不确定可暂不归属，稍后在“待整理”补充。</li>
+      <li><strong>用途可以稍后调整。</strong>“交流记录”用于回看信息；“待办线索”表示需要推进；“安排线索”表示要补具体时间；“项目研判资料”归入指定项目，并可带着原文讨论推进。用途不是讨论或采用行动的前置条件。选择用途只给原记录分流，整段原话仍是记录。打开“核对秘书准备稿”，修改并采用具体行动后才进入待办。</li>
+      <li><strong>补充具体行动。</strong>AI 摘要和建议可回看来源。采纳行动后到“跟进事项”补执行人、截止或回访要求；只有确认具体安排才进入有效日程。确认归属改变了客户时，秘书会自动按新归属重新整理。待办线索采纳为具体行动后，原话保留为来源纪要，避免把整段原话和具体行动重复计算；已经给原话单独拟定的日程继续保留。</li>
+    </ol>
+    <div class="expect"><strong>确认过的归属不用反复确认</strong>记录详情先显示“归属与用途已确认”和当前客户、项目、用途。要改时展开“调整归属或用途”。当前项目可直接点击查看；来源真正修改后，需要重新核对的归属会有提示。</div>
+    <h3>总览：先看我，再看项目</h3>
+    <p>导航“总览”的“我的工作”集中显示本人行动、等待客户／团队、逾期、待整理、待核对和今天日程。客户答应回资料属于等待反馈，不会当成你亲自执行的工作。只写了截止日期的事项，在当天表示今天应跟进；过了该日期才算逾期。</p>
+    <p>切到“项目总览”，分别看每个项目的阶段、金额性质与审批、已归组动作、跟进目标、下一次有效日程和卡点。点<strong>查看本项目的全部事项</strong>，进入只看该项目的目标列表；搜索也保持项目范围。同一客户的两个项目分别推进。原先的行动统计和“查看本项目行动”保留在<strong>原项目行动明细</strong>中，展开后可进入该单位的项目历程核对旧资料。</p>
+    <h3>AI 跟进讨论：把意见变成下一步</h3>
+    <ol>
+      <li>在导航“AI跟进讨论”新开讨论，选择客户和具体项目；也可从原记录或项目卡点“讨论下一步”，携带现场原话。</li>
+      <li>从历程勾选记录进入时，先看“优先参考的原文”，展开核对内容与性质，或打开完整原文。这里列出你明确选中的依据，秘书还会结合当前对象的有效背景；个人思考不会变成客户承诺。</li>
+      <li>直接提问，例如：“我还没弄清是谁验收，下一次和陈工交流该先问什么？”继续追问：“如果客户说等预算，我怎么保留推进机会？”每轮对话会保留。</li>
+      <li>结合已有资料看建议、待核实问题和风险。AI 的推断不会写成客户事实。演练版提供固定示例，正式版调用已配置的模型。</li>
+      <li>觉得建议可执行，就点“采纳为待办”，先核对标题、谁来推进和相关人；需要修改依据、材料或完成标志时展开原建议。具体项目里的讨论沿用该项目。联系人整体讨论可在后台支持时显式选择此人参与的本单位项目，也可暂不归项目；这只决定新行动的归属，原讨论范围不变。随后打开该待办补时间并确认日程；还没有日期就先保留待办。</li>
+      <li>执行后点“完成跟进并记结果”，说明客户反馈并留下下一步。下次讨论可结合新结果继续推进。资料或讨论改变后，先前建议可能需重新核对。</li>
+      <li>新话题会用首个问题形成简短标题；点“改话题标题”可写成方便回找的名称。改名只更新标题，原问题、回复和已采纳待办继续保留。采纳多个建议时，每次成功后页面会刷新当前讨论，再核对下一项。</li>
+    </ol>
+    <div class="expect"><strong>建议先练这一小段</strong>告诉秘书 → 查看回执与必要追问 → 一段话补齐目标和安排 → 会后继续复盘。明确的个人安排直接执行；AI建议仍由你采纳。时间未知先留日期级计划或未排期待办。</div>
+    <p>客户页“推进建议”里的“反馈推进结果”用于告诉秘书已落实、遇阻、暂缓或不适用，并补充实际原因。“最近反馈”和历史会保留之前各轮的反馈，方便确认秘书已经收到；新一轮建议仍需结合现场情况判断。</p>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="ai-research">
+    <p class="exercise">从目标开始 · 秘书准备，你来核对</p>
+    <h2>让秘书研究单位，准备下一次交流</h2>
+    <p>在工作台输入“帮我研究星浦医疗科技集团，做单位画像，准备下次拜访”，选择正确单位；或打开客户档案的“资料”分区，点击“研究单位 / 继续准备稿”，再选“快速准备单位画像”。名称可以使用简称，秘书会结合已有客户信息提出候选；匹配不清时，可手选单位或先新建单位。</p>
+    <ol>
+      <li><strong>选择研究深度。</strong>“快速准备单位画像”准备基础公开背景；“继续深入研究”再检索业务建设和采购线索，创建另一份准备稿。后台任务已保存后可以离开，回来从“已有研究任务”继续。</li>
+      <li><strong>先看单位背景。</strong>行业、区域、机构类型等可直接修改。同一字段有多个候选时，展开其他候选比较各自内容与出处；同一字段一次只选一个。项目和人物线索放在折叠区，先核对具体归属，再沿原流程采用。</li>
+      <li><strong>改完可只保存草稿。</strong>“保存准备稿”保留编辑与选择，不改正式画像。要写入资料时，选择需要的项目，查看原文、出处和发布日期，勾选统一核对后点击“确认所选资料”。非官网来源还需核对单位身份。</li>
+      <li><strong>看逐项结果。</strong>已保存内容保留旧值和来源历史。公开内容始终是公开观察；旧公告不等于当前承诺。其他地方改过画像时，先点“重新核对最新资料”，比较最新值后再决定；旧稿仍可恢复。</li>
+      <li><strong>接着讨论行动。</strong>点击准备提示下的“与 AI 讨论下一步”，只会带入单位与问题草稿。补充现场情况后点“发送讨论”；看完建议，再“核对后采纳为待办”。没有时间先留待办，补时间并明确确认后才加入日程。</li>
+    </ol>
+    <div class="note"><strong>公开画像后来改了，怎样回看依据</strong><p>例如公开简介写“总部位于上海”，你后来了解到已经迁到杭州：在“资料”里更新“区域”，写下杭州及本次了解到的依据，再选择“明确信息”或“个人观察”。编辑公开资料时，页面会展示旧出处并提醒你一起核对本次依据；不要把上海的旧原文直接当作杭州的证据。</p><p>保存后，新值显示为本次手工修订。展开该字段的“这项资料的旧值与来源”，仍可查看上海的旧值、当时的信息性质、公开标题、发布日期与获取时间，点“查看公开原文”核对；“画像修改历史”也保留这些出处。新值不会自动冒充来自旧公开原文，旧公开资料也不会被删除。</p></div>
+    <div class="expect"><strong>成功时看到什么</strong>已有研究任务 → 可修改的单位背景准备稿 → 逐项保存回执 → AI 讨论 → 待办详情。准备提示若标为“规则准备提示”，表示它由已有资料和规则生成；模型讨论与这些提示的来源分别显示。</div>
+    <div class="note warm">使用官方 DeepSeek API 时，公开研究自动复用已有 API Key，通过原生联网搜索取得可核对的网页引用；没有引用时每个研究主题最多自动读取两份公开网页正文节选，无需额外搜索 Key；搜索会产生模型用量。已另配 Tavily 时优先使用 Tavily。第三方模型代理的 Key 不会自动用于 DeepSeek，可另接搜索服务。手动研究只需核对单位名称，官网域名选填。研究失败可“继续处理这份准备稿”；零结果会提示核对名称和来源。深入研究按单位背景、数据安全与密码建设、公开采购三个方向检索和提取，并非无限自主调查。</div>
+    <p class="small">本轮另有 <a href="http://127.0.0.1:8768/" target="_blank" rel="noopener">独立研究演练 · 8768</a>，口令 <code>learn-secretary-2026</code>。输入“帮我研究QA合成画像银行，做单位画像”可练正常流程；“QA合成失败恢复公司”可练失败重试；“QA合成空结果单位”可练没有来源。结果全部离线合成，不代表真实搜索或模型准确率。</p>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="listen-workflow">
+    <h2>聆记：现场先录，回来再整理</h2>
+    <p>外出时把聆记手机客户端当成录音入口。正式交流录一段“现场录音”；结束后再口述一段“我的复盘”，说清客户的原话、你自己的判断、答应做的事及尚未明确的时间。两段可以放进同一次“客户交流”，方便分辨谁说了什么。</p>
+    <div class="table-wrap"><table><thead><tr><th>何时输入</th><th>建议内容</th><th>秘书里如何接住</th></tr></thead><tbody>
+      <tr><td>现场想到一个点</td><td>“陈工说接口改造风险大，回去先核对适配边界。”</td><td>一句话输入或输入法语音，先保存；归属不明的留待整理。</td></tr>
+      <tr><td>完整会议或拜访</td><td>现场原音、参与人、议题与各方承诺。</td><td>聆记录音转写完成后，按完整标题导入“录音与材料”，后台拉取并整理，建议客户归属供确认。</td></tr>
+      <tr><td>结束后的个人复盘</td><td>“我观察陈工担心业务中断。客户没承诺预算；我下次先确认试点窗口。”</td><td>短复盘直接记一句话，长复盘导入文本，来源角色选“我的复盘”；观察仍按观察保存。</td></tr>
+      <tr><td>回来补充</td><td>纠正客户称呼、密码术语、具体接口或预算来源。</td><td>在同一次客户交流追加“后续补充”，修正当前转写并保留历史，再核对行动。</td></tr>
+    </tbody></table></div>
+    <p><strong>方便查找的命名：</strong>建议聆记标题写“日期＋客户称呼／项目线索＋现场／复盘”，例如“2026-10-03 陈工 签名 现场”。标题可使用你熟悉的简称；秘书会根据转写提出客户／项目候选，不要求标题等于客户全名。</p>
+    <p><strong>当前实际路径：</strong>聆记完成转写 → 复制完整录音标题 → 首页“导入聆记材料”或“录音与材料”的聆记导入 → 等待后台拉取 → 核对候选客户、实际交流时间与人物 → 采纳跟进事项或带原文讨论。聆记尚未配置时，可以粘贴导出的转写文本继续。</p>
+    <h3>后来的进展，要保留后来的时间</h3>
+    <p>同一场交流里追加来源时，先选“现场录音 / 会议文本”“我的复盘”或“后续补充”。展开“这份来源描述的实际发生时间”：描述原交流就沿用交流时间；后来接到的电话、邮件或新进展，选“后来的进展，单独保留发生时间”，填真实时间，不知道就留空。后续补充默认采用这个选项。</p>
+    <p>已有材料发生时间与原交流不同，确认确实属于同一场交流后，勾选“我确认材料属于所选交流，保留材料自己的实际时间”再关联。这样保留各自时间，不把今天的反馈写成昨天会议里已经说过的话。</p>
+    <p class="small muted">材料实际发生时间尚未核实时，当前整理会保留时间依据并要求补充，不自动拟安排；即使原文里有绝对日期，也请在采纳后的待办“补充具体时间”核对后确认。不要为了生成日程，把保存时间填成会议发生时间。</p>
+    <div class="note warm">当前软件的 MCP 连接只按完整标题读取转写和摘要，尚未接入录音列表／搜索／完成事件接口，因此还不能自动发现手机刚录的所有录音。录音进入读取队列后可自动拉取和整理。很长的材料归属识别使用标题及前 20,000 字，候选仍需对照完整来源核对。演练不连接聆记和真实语音服务。</div>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="case-one">
+    <p class="exercise">案例一 · 场景练习 1</p><h2>澄川：展会后的数据库加密线索</h2>
+    <p>虚构制造企业正在了解数据库加密。你刚与联系人交流过，记住需求和自己的判断，但还没有约定下一次具体时间。目标是留下可信资料，并建立一条没有日程的待办。</p>
+    <div class="note"><strong>从预置场景开始：</strong>打开澄川精密制造集团，查找“展会后的数据库加密线索”与“发送数据库加密产品资料”。对照原文和画像信息性质，再练给待办补充说明。若从零重做，使用下面的原话。</div>
+    <div class="quote"><div class="quote-head"><strong>预置原话 · 回看事实／观察，不重复创建澄川</strong><button class="copy" type="button" data-copy="quote-lead">复制原话</button></div><pre id="quote-lead">新建客户澄川精密制造集团，联系人许工，许工是数据库负责人。客户明确需要数据库加密和集中密钥管理。我观察预算可能尚未明确。我答应发送数据库加密产品资料，没有约定执行时间。</pre></div>
+    <div class="quote"><div class="quote-head"><strong>可复制原话 · 从零新增客户，离线演练支持这句</strong><button class="copy" type="button" data-copy="quote-new-customer">复制原话</button></div><pre id="quote-new-customer">新建客户霁星数据研究院，联系人李工，关注数据库加密和密钥管理。</pre></div>
+    <div class="step"><h4><span class="step-no">1</span>回看澄川，或真正新增霁星</h4><p>澄川预置客户已经创建，先打开“展会后的数据库加密线索”回看原话。要练从零新增，请复制第二段<strong>霁星数据研究院</strong>的指定句。</p><p class="route">顶栏“记录方式” → “随口记 · 客户资料” → 客户选“暂不指定，由这句话识别” → 粘贴指定新增句 → 内容类别“客户交流” → “帮我整理”</p><p>第一次练习保持指定句不变。其他自由输入可保存，但离线示例不会替任意内容生成完整画像。真实模式需配置实际整理服务。</p><div class="expect"><strong>成功时看到什么</strong>出现霁星的客户资料草稿，包含联系人李工与数据库加密、密钥管理需求；此时需要“确认写入客户档案”。这句没有行动承诺，所以不应凭空生成待办。</div></div>
+    <div class="step"><h4><span class="step-no">2</span>核对资料，保留观察性质</h4><p>霁星草稿逐项看“原内容”“将保存为”和“依据”，正确后点“确认写入客户档案”；草稿不合适可“取消这份变更”。回到澄川画像，查看已确认的数据库加密与集中密钥管理需求，以及“预算可能尚未明确，待核实”的个人观察，两者性质分别保留。</p><p>若要手动补充：客户详情“补充画像”→选择这次补充的字段→填“具体内容”→“这条信息的性质”选“明确信息 · 客户表述或已核实”或“个人观察 · 我的判断，仍待核实”→填“原话 / 依据（选填）”→“保存画像”。</p><div class="expect"><strong>成功时看到什么</strong>霁星确认后出现在“客户”列表；澄川需求与个人观察分别显示性质及依据。未知金额保持未明确；“预算可能尚未明确”不是客户已核实的审批结论。</div></div>
+    <div class="step"><h4><span class="step-no">3</span>核对无时间待办</h4><p>澄川的“发送数据库加密产品资料”已经预置采纳，直接打开已有事项或“查看待办 / 补时间”。如果重练记录整理，在新的手工记录里保留精确动作句“我答应发送数据库加密产品资料，没有约定执行时间。”，客户选澄川；整理后结果点“加入跟进”，或顶部“核对”中点“采纳为待办”。</p><div class="expect"><strong>成功时看到什么</strong>“跟进事项”或客户“我的未完行动”出现这条待办；具体时间未定。没有凭保存时间生成执行安排，“日程”中没有新增这条已确认执行日程。</div></div>
+    <div class="step"><h4><span class="step-no">4</span>补联系人和公司简称</h4><p>客户详情“基本资料”维护“常用简称 / 别称”，多个简称用逗号分隔。联系人区域“添加”→填“姓名 / 称呼”“职务 / 项目角色”“联系电话”→“添加联系人”。已有联系人点“编辑联系人”修改，也可“设为主要对接人”。保存画像后会展开刚修改的字段；公司画像的折叠标题也能看到最近补充的内容。</p><div class="expect"><strong>成功时看到什么</strong>公司简称归属于该公司，联系人有独立档案。以后核对归属时可以参考这些明确名称；联系人称呼仍需要结合所在公司判断。</div></div>
+    <div class="check"><strong>这一轮结束前检查</strong>能找到首次原话；客户需求与我的观察有区别；只有一条需要推进的待办；具体时间保持未定；未知金额留空而不是填0。</div>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="case-two">
+    <p class="exercise">案例二 · 场景练习 2、3</p><h2>云岚：会议文字、个人复盘和多责任人</h2>
+    <p>虚构城运信息中心讨论数据共享与商用密码整改。这里使用<strong>假设已取得的会议转写文字</strong>练习归档，不调用真实录音平台，也不宣称真实识别能力。你要把现场内容和事后判断分别保存，并分清谁执行、哪天截止、哪天检查。</p>
+    <div class="note"><strong>从预置场景开始：</strong>打开云岚市城运信息中心的“数据共享与商密整改技术交流”。先展开“完整来源”，找到会议文字和个人复盘，再逐项打开已有行动核对。已采纳的项不要重复新建。</div>
+    <div class="quote"><div class="quote-head"><strong>可复制原话 · 预置虚构会议文字，离线演练支持</strong><button class="copy" type="button" data-copy="quote-meeting">复制原话</button></div><pre id="quote-meeting" data-date-template>【虚构录音文本；没有音频，没有真实ASR】
+客户周工答应提供接口清单，截止{{date:3}}。
+我答应演示脱敏网关，执行时间{{date:2}} 15:00，预计45分钟。
+我方团队赵工负责完成兼容验证，截止{{date:5}}，检查{{date:4}}。</pre></div>
+    <div class="step"><h4><span class="step-no">1</span>保存一场交流</h4><p class="route">“客户交流” → “新建交流” → 填“交流标题” → 选云岚 → 核对“实际时间” → “保存交流”</p><p>从零练习时可命名“数据共享与商密整改技术交流 · 手工练习”。知道实际发生时间才填写；不知道就留空。</p><div class="expect"><strong>成功时看到什么</strong>一场交流保存成功；客户归属正确，实际时间是你明确填写的时间或“实际时间待补”，不由创建时间冒充。</div></div>
+    <div class="step"><h4><span class="step-no">2</span>先完整保存会议文字</h4><p class="route">“录音与材料” → “粘贴文本” → 材料标题、原始文本、关联客户、实际发生时间 → “保存并开始整理”</p><p>材料标题可填“云岚技术交流 · 现场录音文字（演练）”。粘贴上面的全文，客户选择云岚，类别选择“客户交流”。保存后等待处理状态更新。</p><div class="expect"><strong>成功时看到什么</strong>材料先显示“已保存，等待处理／整理中”等进度，最终到“整理完成，待核对”；原始文本可回看。若处理失败，原文仍有保留，先按后文失败恢复步骤处理。</div></div>
+    <div class="step"><h4><span class="step-no">3</span>归到同一场客户交流</h4><p>打开刚保存的交流→“关联已有材料”→选择这份会议文字→“这份材料在本场交流中是什么”选择“现场录音 / 会议文本”→“关联到这场交流”。也可以从材料详情“归入客户交流”选择已有交流。</p><p>“现场录音”在这里说明来源角色；粘贴的虚构文字仍是文本导入，不会变成一份真正的音频。如果录音与交流的实际时间不同，核实是否确为同一次后明确确认关联，保留两份实际时间。</p><div class="expect"><strong>成功时看到什么</strong>交流“完整来源”出现独立会议来源，全文仍可打开；原材料没有被删掉。归档不复制已采纳待办，也不应产生重复待办。</div></div>
+    <div class="quote"><div class="quote-head"><strong>可复制原话 · 预置个人观察，保存为独立来源</strong><button class="copy" type="button" data-copy="quote-recap">复制原话</button></div><pre id="quote-recap">【个人观察】我观察客户担心数据出域后的访问审计，需核实脱敏规则和验收指标；这不是客户已确认的要求。</pre></div>
+    <div class="step"><h4><span class="step-no">4</span>独立添加事后复盘</h4><p class="route">同一场交流 → “添加我的复盘” → 粘贴复盘原话 → “保存我的复盘并整理”</p><p>预置复盘只含个人观察，没有行动承诺。离线整理会保留原文并提示理解范围；不要期待它凭这段话创建新的执行行动。要保存为画像，可手动“补充画像”并选“个人观察”。</p><div class="expect"><strong>成功时看到什么</strong>现场文字与“我的复盘”是两份来源，各自保留原话。自己的判断仍待核实，会议里的三项明确承诺可继续核对；后来的复盘不直接覆盖已采纳或已确认的安排。</div></div>
+    <div class="step"><h4><span class="step-no">5</span>逐项核对责任人与时间含义</h4><p>在“下一步，逐项决定”查看依据，再采纳我的行动为待办、客户和同事承诺为等待事项。打开对应事项，点“核对负责人 / 截止 / 检查”，核对下表后“保存核对后的行动资料”。</p><div class="table-wrap"><table><thead><tr><th>事项</th><th>谁执行</th><th>时间应如何保存</th><th>应看到的结果</th></tr></thead><tbody>
+      <tr><td>提供接口清单</td><td>客户承诺，等待反馈</td><td>截止日期 D+3：<span data-day="3">2026-10-06</span>；未约几点，不填执行预约。</td><td>在等待反馈中可见；不自动占用个人执行日程。</td></tr>
+      <tr><td>演示脱敏网关</td><td>我需要执行</td><td>明确执行预约 D+2 15:00：<span data-day="2">2026-10-05</span>；预计45分钟。</td><td>行动保存执行预约与45分钟；正式加入日程仍要确认。</td></tr>
+      <tr><td>完成兼容验证</td><td>内部同事配合，等待反馈</td><td>截止日期 D+5：<span data-day="5">2026-10-08</span>；检查日期 D+4：<span data-day="4">2026-10-07</span>；不编造具体时刻。</td><td>等待反馈与日期检查节点可见；不变成我的全天执行预约。</td></tr>
+    </tbody></table></div><div class="expect"><strong>成功时看到什么</strong>客户和团队事项进入等待反馈；执行、截止、检查分别显示。仅日期的节点提示“原话只明确日期”，不会因此自动启用提醒。</div></div>
+    <div class="step"><h4><span class="step-no">6</span>明确确认自己的演示安排</h4><p>打开“演示脱敏网关”→查看待确认安排；若尚未产生提案，在“补充具体时间”填 D+2 15:00、预计45分钟→“保存待确认安排”→核对后“确认加入日程”。</p><div class="expect"><strong>成功时看到什么</strong>“日程”对应日期出现这次演示，预计45分钟；客户的接口清单、赵工的兼容验证不会同时新增为个人执行日程。演练本机模式不发送企微消息。</div></div>
+    <div class="check"><strong>同一事项出现两种措辞时</strong>先比对客户、责任人、具体事情、时间与原話。在“合并重复事项”里勾选确为同一项的卡片→“合并选中重复事项”。有时间或责任人冲突时，先“核对 / 修正”来源；标题相似本身不能作为合并理由。</div>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="case-three">
+    <p class="exercise">案例三 · 场景练习 4、5</p><h2>星浦：同一客户两个独立项目</h2>
+    <p>虚构医疗科技集团同时讨论两项不同的业务：数据库透明加密试点、电子病历签名验签。目标是分开保存项目金额和审批，把来源明确归属到各自项目，再练完成报告与接下一步。</p>
+    <div class="note"><strong>从预置场景开始：</strong>打开星浦医疗科技集团→“独立项目 / 商机”→分别点“核对 / 编辑项目”。两个项目已经存在时，核对字段并保存，不再创建同名项目。</div>
+    <div class="table-wrap"><table><thead><tr><th>字段</th><th>数据库透明加密试点</th><th>电子病历签名验签</th></tr></thead><tbody>
+      <tr><td>金额（人民币／元）</td><td>180000</td><td>460000</td></tr>
+      <tr><td>金额性质</td><td>估算</td><td>预算</td></tr>
+      <tr><td>审批情况</td><td>未确认审批</td><td>已批准</td></tr>
+      <tr><td>当前项目阶段</td><td>方案报价</td><td>需求确认</td></tr>
+      <tr><td>已保存项目范围</td><td>数据库字段透明加密与密钥管理。</td><td>电子病历签名、验签与证据留存。</td></tr>
+      <tr><td>后续可核实的问题</td><td>测试环境、业务清单、采购负责人、估算依据。</td><td>预算范围、接口负责人、采购路径与批准依据。</td></tr>
+      <tr><td>联系人与决策链</td><td colspan="2">已有陈工：信息中心项目负责人。项目决策链为“陈工技术评审；采购与审批人需分别核对”。参与此项目的联系人需要你核实后分别勾选。</td></tr>
+    </tbody></table></div>
+    <div class="step"><h4><span class="step-no">1</span>新建或核对两个项目</h4><p class="route">客户页“新建项目” → “项目 / 商机名称”“项目阶段”“金额”“金额性质”“审批情况” → “保存项目资料”</p><p>展开“范围、采购、决策链与联系人（选填）”，分别补充项目范围、采购路径、决策链、阻力 / 待解问题、项目节点、项目备注、参与此项目的联系人。若需先添加联系人，在客户页“联系人”区域点“添加”。</p><div class="expect"><strong>成功时看到什么</strong>同一客户出现两张项目卡；18万元显示估算且尚未确认审批，46万元显示预算且已批准。保存其中一项不会改写另一项。历史客户金额不会自动分配或复制到每个项目。</div><p>首页“已知项目金额”显示64万元，是18万元估算加46万元预算，并标明金额性质；这不是收入或预计收入，历史客户金额不会重复加到项目金额里。</p></div>
+    <div class="quote"><div class="quote-head"><strong>项目来源原话 · 分别归档，金额与审批手工核对</strong><button class="copy" type="button" data-copy="quote-projects">复制原话</button></div><pre id="quote-projects">数据库透明加密试点估算18万元，预算未审批；不能把估算当作合同金额。
+
+电子病历签名验签项目预算46万元，客户已批准预算；技术验收和采购负责人仍需核实。</pre></div>
+    <p class="small muted">已有来源记录分别名为“透明加密试点金额与审批核对”“电子病历签名项目预算核对”。这类自由说明在离线版只保留原文；项目字段按上表手动保存与核对，不由离线示例自动填写。</p>
+    <div class="step"><h4><span class="step-no">2</span>给每份来源与行动指定项目</h4><p>打开相关记录、客户交流或材料→“关联 / 调整项目归属”→“关联哪个项目”→选择正确项目→“保存明确归属”。若内容混合两个项目，应先在来源中说明哪些信息属于哪个项目，并逐项核对；不确定就“暂不关联项目，保留客户归属”。</p><div class="expect"><strong>成功时看到什么</strong>项目归属有明确保存结果，记录仍归属于星浦客户；既有日程、原文继续保留。来源后续修改如使旧关联失效，会要求重新核对，不能默认沿用错误关联。</div></div>
+    <div class="step"><h4><span class="step-no">3</span>完成报告，保存结果和下一步</h4><p>从已有“提交透明加密测试报告”开始：如果已经完成，直接回看客户“跟进结果与接续行动”和“确认试点采购负责人”。要从零练习，在“新建记录”手动建立同名加“手工练习”的待办，选择星浦，并明确关联透明加密项目。</p><p class="route">待办详情“完成跟进并记结果” → 填“这次取得什么结果” → 选填“补充原话 / 说明” → 展开“顺手记下一步（选填）” → “完成本次并保存结果”</p><div class="table-wrap narrow"><table><thead><tr><th>字段</th><th>本轮示例</th></tr></thead><tbody>
+      <tr><td>这次取得什么结果</td><td>虚构结果：测试报告已收到，本次性能指标达标；采购条件仍需核实。</td></tr>
+      <tr><td>补充原话 / 说明（手工练习可选）</td><td>陈工技术评审；采购与审批人需分别核对。</td></tr>
+      <tr><td>下一步要做什么</td><td>确认试点采购负责人</td></tr>
+      <tr><td>下一步依据 / 还要核实什么</td><td>向陈工确认试点采购负责人，没有约定执行时间。</td></tr>
+    </tbody></table></div><div class="expect"><strong>成功时看到什么</strong>报告待办变成“已完成”，结果可回看；出现“本次结果已保存，下一步继续跟进”或客户里的接续行动。“确认试点采购负责人”具体时间未定，不自动排期。</div></div>
+    <div class="step"><h4><span class="step-no">4</span>下一步有约定后再安排</h4><p>点“继续下一步 / 补时间”。先核对新行动的客户与项目归属，再到“补充具体时间”填真实约定的未来时间、预计用时→“保存待确认安排”→“确认加入日程”。现在尚未约定就保留待办。</p><div class="expect"><strong>成功时看到什么</strong>无约定时只在未完行动中；明确确认后才出现在对应日程。再次保存或重复点击完成不会建立重复的接续待办。</div></div>
+    <div class="note warm"><strong>完成入口的区别</strong><p>要保存结果和下一步，使用待办详情“完成跟进并记结果”。日程中如果关联了尚未完成的待办，也显示“完成跟进并记结果”。“仅完成日程”只结束本次安排，不填写跟进结果或建立接续行动。</p><p>“完成跟进并记结果”弹窗没有下一步时间输入框。先建立接续待办，再打开它核对具体安排。</p></div>
+    <div class="note"><strong>暂时不跟的项目可以归档</strong><p>“核对 / 编辑项目”里勾选“归档项目，保留资料与行动”并保存，项目从当前项目总览移出；它的待办不会因此完成。回到客户页展开“已归档项目”，点“核对 / 恢复项目”，取消归档勾选并保存。恢复后核对来源的项目归属，再继续推进。</p></div>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="changes">
+    <p class="exercise">案例三继续 · 场景练习 6</p><h2>06 · 改期与取消，都从原事项开始</h2>
+    <p>星浦的“原定数据脱敏POC演示”原来已确认在 D+2 10:00，已有待确认改期到 D+4 15:00。“原定密码机选型交流”原来已确认在 D+3 10:00，已有待确认取消提案。先核对原安排，再决定是否让提案生效。</p>
+    <div class="table-wrap"><table><thead><tr><th>原事项</th><th>生效的原安排</th><th>待确认提案</th><th>确认前应看到什么</th></tr></thead><tbody>
+      <tr><td>原定数据脱敏POC演示</td><td><span data-day="2">2026-10-05</span> 10:00</td><td><span data-day="4">2026-10-07</span> 15:00</td><td>原安排仍有效，新时间待确认。</td></tr>
+      <tr><td>原定密码机选型交流</td><td><span data-day="3">2026-10-06</span> 10:00</td><td>取消原安排</td><td>原安排仍有效，有“确认取消原安排”和保留原安排选项。</td></tr>
+    </tbody></table></div>
+    <div class="step"><h4><span class="step-no">1</span>先观察预置提案</h4><p>打开原事项的“日程与下一次安排”，对比原日程和待确认卡片；或从顶部“核对”查看对应 P 编号。先不点击确认，去“日程”核对原时间仍在。</p><div class="expect"><strong>成功时看到什么</strong>原时间与待确认变更分别显示。“确认变更前，原日程保持不变。”如果提案已被处理，以当前实际状态与历史为准。</div></div>
+    <div class="step"><h4><span class="step-no">2</span>接受改期或保留原安排</h4><p>愿意改期时，核对新日期和用时后点“确认加入日程”；不接受这份改期则点“取消这份安排”。取消的是待确认提案，原生效日程保持。</p><div class="expect"><strong>成功时看到什么</strong>确认改期后，当前执行日程转为新时间，原安排留在历史；拒绝提案则继续保留原时间，不出现第二条同时生效的重复安排。</div></div>
+    <div class="quote"><div class="quote-head"><strong>预置改期原话 · 已有提案先核对，不重复生成</strong><button class="copy" type="button" data-copy="quote-change">复制原话</button></div><pre id="quote-change" data-date-template>改到{{date:4}}下午三点，预计45分钟</pre></div>
+    <div class="step"><h4><span class="step-no">3</span>口述改期要写在原事项里</h4><p class="route">原事项“这次沟通 / 进展” → 输入明确改期 → “保存并整理本次沟通” → 核对变更提案 → “确认加入日程”</p><p>已有预置提案时直接核对确认，不必再次粘贴相同改期句。要重练，可另建有未来生效安排的手工待办，再在它的原事项里输入明确变更。不要只在无关联的普通新记录里说“改到下午3点”；系统需要明确是哪一条原安排。普通“保存进展”只留进展，不等于执行整理和确认。</p><div class="expect"><strong>成功时看到什么</strong>出现针对这条原任务的待确认变更，预置例句明确用时为45分钟；原时间在确认前继续有效。否定、条件或多个备选时间会保留原话并要求澄清。</div></div>
+    <div class="quote"><div class="quote-head"><strong>预置取消原话 · 在原事项里使用</strong><button class="copy" type="button" data-copy="quote-cancel">复制原话</button></div><pre id="quote-cancel">取消原提醒</pre></div>
+    <div class="step"><h4><span class="step-no">4</span>核对取消提案再决定</h4><p>在“原定密码机选型交流”的“这次沟通 / 进展”保存并整理明确取消原话。若已有预置取消提案，直接核对即可。确认取消时点“确认取消原安排”；决定不取消时，详情点“保留原安排，不执行取消”，统一核对中对应按钮是“保留原安排”。</p><div class="expect"><strong>成功时看到什么</strong>确认后原安排变为取消，记录与历史保留，未完成事项仍可继续推进；保留原安排时原日程继续有效。</div></div>
+    <div class="note warm"><strong>直接取消与口述取消</strong><p>“取消当前日程”是直接取消现有安排的按钮，当前实现不会再打开口述取消提案。取消日程不会自动把待办标成已完成。要记录取消依据并走提案核对流程，用原事项“这次沟通 / 进展”→“保存并整理本次沟通”。</p></div>
+    <details><summary>需要手动改期时</summary><p>原事项展开“调整当前安排”→填“计划时间（北京时间）”“预计用时 / 分钟”→“保存待确认安排”→核对后“确认加入日程”。计划时间必须为未来；预计用时为5到720分钟的整数。</p><p>不清楚实际时长时，日程表单可能给出可修改的30分钟默认值。这是表单默认值，不能视为原话已经明确了30分钟。</p></details>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="waiting">
+    <p class="exercise">场景练习 7</p><h2>07 · 等待客户，用检查日期跟进</h2>
+    <p>星浦客户承诺确认测试环境，但没有约定由你执行某个动作的具体时刻。等待事项需要记下对方承诺和回访检查，避免把对方的事情排成自己的执行日程。</p>
+    <div class="quote"><div class="quote-head"><strong>可复制原话 · 预置等待客户句式</strong><button class="copy" type="button" data-copy="quote-waiting">复制原话</button></div><pre id="quote-waiting" data-date-template>客户陈工答应确认测试环境，没有约定执行时间；检查{{date:3}}是否收到反馈。</pre></div>
+    <div class="step"><h4><span class="step-no">1</span>打开等待事项</h4><p>星浦客户页展开“等待客户 / 配合反馈”，打开“等待客户确认测试环境”。从零练习时可随口记上述原话，选星浦客户，核对后“采纳为等待事项”。</p><div class="expect"><strong>成功时看到什么</strong>事项在等待反馈区域；责任人是客户，没有自动为你创建执行预约。它不出现在要求本人补执行时间的首页栏目。</div></div>
+    <div class="step"><h4><span class="step-no">2</span>核对回访检查</h4><p>“核对负责人 / 截止 / 检查”→“谁执行这项行动”选“客户承诺，等待反馈”→“回访 / 检查日期（未说几点时）”填 D+3→执行预约留空→保留原话依据→“保存核对后的行动资料”。</p><div class="expect"><strong>成功时看到什么</strong>只保留 D+3 的回访检查日期；“日程”的“截止与回访检查”区域可查看，不因保存行动资料直接启用执行提醒。</div></div>
+    <div class="step"><h4><span class="step-no">3</span>收到反馈就更新结果</h4><p>客户回复后，在原事项“这次沟通 / 进展”写清实际反馈；如承诺已履行，使用“完成跟进并记结果”保存结果。若你接下来需要安排测试协调，另建自己的接续待办，明确时间后再确认日程。</p><div class="expect"><strong>成功时看到什么</strong>原等待事项有真实结果，新行动的责任人与原事项不同且单独可查；已经完成的旧事项不继续出现在未完行动和检查节点中。</div></div>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="overdue">
+    <p class="exercise">场景练习 8</p><h2>08 · 逾期事项，先说明进展</h2>
+    <p>澄川的“发送密钥管理部署方案”在演练里有 D−1 的未完成安排。它用来练习逾期后继续推进；本轮演练保留过去的已生效安排，手动日程表单不允许新建过去时间。</p>
+    <div class="step"><h4><span class="step-no">1</span>找到真正的逾期行动</h4><p>工作台“先处理哪件事”查看逾期栏目，或“日程”选择 D−1。打开“发送密钥管理部署方案”；如果预置安排已被练习完成，就从其来源记录与完成历史回看。</p><div class="expect"><strong>成功时看到什么</strong>未完成、已过计划时间的事项留在逾期区域；已完成事项不会继续作为当前逾期行动提示。</div></div>
+    <div class="quote"><div class="quote-head"><strong>可复制原话 · 逾期后的实际进展</strong><button class="copy" type="button" data-copy="quote-overdue">复制原话</button></div><pre id="quote-overdue">澄川精密制造集团这份密钥管理部署方案还没有发送。原因是测试环境的部署边界需要技术同事补充，我今天已向同事确认，资料仍未齐。客户尚未收到，不把本次记为完成。等范围明确后，再向客户确认发送和讲解时间。</pre></div>
+    <div class="step"><h4><span class="step-no">2</span>保存进展，决定接下来做什么</h4><p>在原事项“这次沟通 / 进展”输入上面说明，点“保存进展”；如果有明确的新行动或变更需要整理，点“保存并整理本次沟通”并核对结果。只是说明“还没完成”时不点完成。</p><div class="expect"><strong>成功时看到什么</strong>时间线保留本次进展；原事项仍未完成。没有明确新时间时，不生成一个任意日期来替代原安排。</div></div>
+    <div class="step"><h4><span class="step-no">3</span>执行完再记录结果</h4><p>真正发送后“完成跟进并记结果”，记录“已发送哪一版方案、客户是否收到、仍待什么反馈”。需要再演示时，在“顺手记下一步（选填）”建立新待办；或对原安排做明确改期并确认。</p><div class="expect"><strong>成功时看到什么</strong>完成后旧事项离开当前未完与逾期提示；结果可回看；新待办是否排期由新的明确约定决定。</div></div>
+    <div class="note"><strong>工作台的推进建议</strong><p>“今天值得推进什么”会展示“为什么现在”“找谁”“推进一步”“准备什么”和待核实信息。可“稍后再看”并保存回看时间，或“本次不适用”。处理建议只影响这次提示，原行动和日程仍保留。</p></div>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="habits">
+    <h2>09 · 每天、每周与日周月规划</h2>
+    <div class="cards">
+      <article><h3>每天开始：先看要推进什么</h3><ol><li>打开工作台，先看逾期与当天已确认安排。</li><li>看“今天值得推进什么”，对照依据、联系人和准备材料。</li><li>打开“核对”，处理近期资料与行动；不适用的建议“不采纳”，暂时决定不了的“稍后处理”。</li><li>检查等待反馈事项；有检查日期时联系对应的人，记录实际反馈。</li></ol></article>
+      <article><h3>每次交流后：留下可接续的记录</h3><ol><li>随口记或向同一场客户交流追加复盘，先校对公司名、人物和术语。</li><li>分清客户明确说了什么、我观察到什么、双方谁答应做什么。</li><li>采纳需要推进的事项，时间明确后单独确认日程。</li><li>做完行动就“完成跟进并记结果”，写结果；下一步还没约时间就只留待办。</li></ol></article>
+    </div>
+    <h3>每周一次：把项目与联系节奏校准</h3>
+    <ol><li>按客户查看未完行动与等待反馈，核对项目范围、阻力、采购路径和决策链。</li><li>逐个检查金额是估算、预算、报价还是合同；审批“未知／未确认审批／已批准”分别有依据。</li><li>更新项目阶段，检查来源与行动归属。多个项目不能用客户总金额代替。</li><li>检查联系人是否仍活跃，离岗或不再对接可“归档联系人”，历史仍保留。</li><li>在“基本资料”维护“建议联系间隔 / 天”。它只提示联系节奏，具体拜访时间仍由你确认。</li><li>查看“核对”中的“稍后处理”“已不采纳”，需要重新决定时“恢复到待核对”。有新依据的项可能重新提示，应核对新增信息。</li></ol>
+    <h3>日、周、月分别看什么</h3>
+    <div class="table-wrap"><table><thead><tr><th>范围</th><th>查看方式</th><th>检查重点</th></tr></thead><tbody>
+      <tr><td>日</td><td>“日程”→“日”→选择日期或“今天”</td><td>当天已确认执行安排、预计用时；截止与回访检查在独立区域。</td></tr>
+      <tr><td>周</td><td>“日程”→“周”→选择该周日期</td><td>本周安排与待完成承诺；看看是否有明确执行时间但仍未确认的提案。</td></tr>
+      <tr><td>月</td><td>“日程”→“月”→选择月份里的日期</td><td>跨周节点、客户检查节奏和项目里程碑。项目备注里的文字节点仍需核对并建立行动资料。</td></tr>
+    </tbody></table></div>
+    <div class="expect"><strong>成功时看到什么</strong>范围切换后标题显示“当日安排”“本周安排”“本月安排”；按钮“查看 / 改期”回到原记录，日期节点提示是否只有日期。显示时区为北京时间。</div>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="repair">
+    <h2>10 · 改错、重复、失败与草稿恢复</h2>
+    <details><summary>保存原话时换了页面，怎样找回</summary><p>迟到的保存结果会更新原请求，当前新输入继续保留。如果保存状态不明，回工作台查看“上次输入，继续保存”，打开原话核对归属再重试。同样原话、归属和原始转写原样重试不会重复保存；修改这些内容会作为新的输入。浏览器会话中的恢复稿要继续保存，才成为后台持久记录。</p></details>
+    <details><summary>补画像时切换字段，怎样继续原稿</summary><p>行业、区域、需求等字段分别保留本次未提交草稿，包括内容、信息性质和依据。切回原字段可继续填写；点“保存画像”只提交当前选择的一项。需要修改多个字段时逐项保存，草稿不会自动写入客户档案。</p></details>
+    <details><summary>只结束预约，事情还没落实</summary><p>在日程点“仅完成日程”，只表示本次执行安排结束。未完成的跟进仍留在“我的工作”、客户未完行动与截止／检查节点，项目不把它计为跟进完成。真正落实后打开该待办，点“完成跟进并记结果”保存实际结果。</p></details>
+    <details><summary>重新纳入一份曾排除的来源</summary><p>在该来源“明确这份来源本次如何使用”把决定改为“纳入核对”，核对本次说明再保存。仍未改写的旧排除说明会清空，原理由继续保留在“来源使用决定历史”。如果你已经写了新的说明，它会保留；不要用“暂不作为依据”的旧理由代表本次纳入决定。</p></details>
+    <details><summary>转写过程中关掉窗口，回来找文字</summary><p>启用专业识别后，如果转写尚未返回就关闭窗口，已完成的文字会保留为待恢复转写；重新打开原客户或交流的语音入口，先核对原归属，再点“恢复到本轮文字”。它不会自动填进后来打开的另一位客户。恢复后核对文字并保存，避免把同一段重复录入。</p><p>等待麦克风授权时关闭窗口，迟到的授权不会继续启动录音。此保护已用模拟权限和转写响应验证；真实音频质量仍需配置识别服务后另测。</p></details>
+    <details open><summary>公司、人物或专业词识别错了</summary><p><strong>短记录：</strong>打开记录→“纠正识别文字”或“编辑记录”→修改全文→“保存并重新整理”。首次原文仍保留。仅保存字段则用“仅保存修改”；已有提醒可选“同步当前待办提醒 · 生成变更提案，确认后生效”或“仅修改记录 · 原提醒保持现状”。</p><p><strong>完整材料：</strong>打开材料，展开“2 · 人工核对与修正：归属、实际时间、人物和文字”，改客户、实际时间或“修正后的全文”→“保存修正并重新整理”。材料产生的待办详情里只展示摘录，改原文应点“打开完整材料重新整理”。没有改内容就保存，不会新增版本或废掉已确认的项目归属和安排；要明确再跑一次整理，用“重新处理”。</p><div class="expect"><strong>成功时看到什么</strong>当前人工修正版与首次来源版本可分别查看。修正文只保存在秘书后台，不写回聆记；已采纳的行动和已确认日程仍需单独核对。</div></details>
+    <details><summary>不确定这段话属于哪位客户</summary><p>随口记先点“核对这句话的客户归属”，看公司名、简称、联系人等理由后选客户。已有记录可“编辑记录”补充“关联客户”；材料在人工核对区补归属。多个同名联系人时，先问清所属公司。</p><div class="expect"><strong>成功时看到什么</strong>客户候选有理由，多候选要求你明确选择；不能仅靠“李经理”“周工”强行写入某家企业。</div></details>
+    <details><summary>同一事项重复出现，或来源之间有冲突</summary><p>在客户交流“合并重复事项”里勾选确为同一行动的项→“合并选中重复事项”。先核对责任人、事情、时间与来源；不同客户或不同执行主体不是同一行动。</p><p>若一个来源说上午10点、另一个说下午3点，先打开“核对 / 修正”确认真实约定，再决定合并或采纳。后续来源不会自动替你改已确认日程；请回原事项核对安排变更。</p><div class="expect"><strong>成功时看到什么</strong>同一行动保留多份依据，冲突明确提示，不静默选择其中一个时间。</div></details>
+    <details><summary>聆记完整标题填写错，导入失败</summary><ol><li>打开“查看 / 重试”，查看实际失败原因。</li><li>点“纠正标题”，从聆记复制完全一致的完整标题，避免语音复述标题；同名录音建议先在聆记改为唯一标题。</li><li>保存修正后，根据当前状态点“重新处理”或“重新读取聆记”。</li><li>无法读取时，点“粘贴人工转写继续”，填核对过的完整文字，保存修正并重新整理。</li></ol><p>客户交流里未读取来源可能阻塞采纳。若明确本次不使用，展开“明确这份来源本次如何使用”→选择“本次暂不使用，保留原材料”→填写必需的理由→“保存本次来源决定”。“稍后核对，继续保留采纳保护”仍会阻塞，需要之后读取核对。</p><div class="expect"><strong>成功时看到什么</strong>失败材料原文或标题保留，来源使用决定有历史。排除来源不删除材料；重新纳入会要求核对影响。</div></details>
+    <details><summary>模型失败、显示“已配置”却没整理成功</summary><p>“已配置”表示找到配置，真实凭据、余额和网络是否可用要到调用时才能验证。原文保存后仍可手工核对，配置可用后再从材料或记录重新整理。正式环境不会用模拟结果冒充成功；本轮独立演练会明确标为离线示例。</p><div class="expect"><strong>成功时看到什么</strong>真实错误状态与已保存原文可见。不能把空结果当成“没有待办”，也不能把演练结果当成真实模型质量测试。</div></details>
+    <details><summary>关掉编辑弹窗，草稿去哪了</summary><p>首页未提交的一句话离页再回来、刷新后仍保留。编辑中“关闭”保留当前浏览器会话草稿；再次打开可显示“已恢复未提交草稿”。从客户里新建记录时，各客户的草稿分别保留，回原客户继续；全局新建入口中的旧草稿仍从全局入口找回。后台已有较新修改时，先显示最新内容，旧稿由你点“恢复旧草稿供对照”再比较，不能直接覆盖。</p><p>两个窗口编辑同一条记录时，旧窗口不能覆盖较新的保存；版本冲突会保留原输入，重新打开最新资料并对照草稿再提交。浏览器草稿不等于已经保存的记录；已提交的原文和材料版本才是持久资料。手机记录后要换电脑继续，先点保存，电脑再打开同一条记录；未提交的浏览器草稿不会自动同步到另一台设备。</p><div class="expect"><strong>成功时看到什么</strong>同一会话重新打开时能恢复输入或选择恢复旧稿；成功保存后回到详情，旧草稿不再次覆盖已保存的新内容。</div></details>
+    <details><summary>从历程打开原文，再回到刚才的位置</summary><p>在客户或联系人“跟进历程”筛选项目、记录类型和关键词，展开“完整内容与来源”再打开来源。点“返回……的跟进历程”后，系统重新核对最新资料，再恢复仍有效的展开记录与阅读位置。来源已更改或隐藏时会提示重新定位，不能继续展示旧正文。另一个客户、联系人或项目不会继承这次阅读状态。</p></details>
+    <details><summary>行动来源提示归属变化，怎样核对</summary><p>待办里的“来自推进计划”或“来自 AI 跟进讨论”可回看原输入、回复和采用结果。系统按采用时的实际客户、项目与人物比较当前归属；全局计划没有先选客户，本身不会被当成归属后来变化。旧来源缺少可靠历史时保持中性提示。出现明确变更或关系待核对时，先看原稿及当前关联，再决定后续行动；来源回看不会自动修改客户或安排。</p></details>
+    <details><summary>把建议暂时放下，之后再恢复</summary><p>顶部“核对”→“稍后处理 · 选择回看时间”→填未来日期时间与选填说明→“保存回看时间”。不适用则“不采纳”；需要重新决定，到“稍后处理”或“已不采纳”页签点“恢复到待核对”。</p><p>同样依据重新整理不应把已不采纳的建议重新推回来；确有新来源变化时会再次提示，先看新证据。</p><div class="expect"><strong>成功时看到什么</strong>统一核对和来源页状态一致，处理说明与原始依据可回看；恢复只是回到待决定，不是自动采纳。</div></details>
+    <details><summary>语音按钮灰色，或者行业词识别不准</summary><p>“记录方式”→“语音 / 行业热词”可保存“行业热词 / 客户专有名词”，每行一个词或逗号分隔→“保存热词”。客户名称、简称和活跃联系人会加入接入的识别词表。</p><p>专业 ASR 未配置时，语音入口先提供可用的文字框：用输入法语音输入或粘贴转写，再核对文字。“开始录音”“结束录音”“转写成文字”依赖实际识别服务与浏览器权限；文件格式、大小和时长按界面能力提示。热词保存本身不等于已经启用识别。已完成专业转写后再切到同一客户的随口记，原始转写与人工校正文分别保留；保存前可展开原始转写对照。</p><div class="expect"><strong>成功时看到什么</strong>原始转写、人工修正、AI理解三层分开；服务未启用有明确提示。真实识别准确率需另外测试。</div></details>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="account-intelligence">
+    <h2>新版 · 一家单位，多位客户，多条项目线</h2>
+    <p>把“客户”分成三层理解：<strong>单位</strong>负责组织背景；<strong>联系人</strong>负责个人职责、偏好与沟通方式；<strong>项目</strong>负责需求、预算、采购路径与决策关系。单位的上下级不等于项目的审批关系。</p>
+    <div class="step"><h4><span class="step-no">1</span>先建立单位和具体的人</h4><p>在“客户”新建单位；新建或“单位关系”中可选择集团、公司、部门等类型与上级单位。进入单位后添加联系人，填写部门和职务。同一单位的两位“王工”可以按部门或不同电话区分；不知道具体是哪一位时先保留原话，不强行合并。</p><div class="expect"><strong>检查结果</strong>单位关系能回看上级、下属与各自联系人；个人画像始终跟着这个人保存。</div></div>
+    <div class="step"><h4><span class="step-no">2</span>每个项目分别核对参与单位与决策人</h4><p>建立项目后点“联系人 / 决策关系”。先记录本项目有哪些参与单位，再为具体联系人选择预算决策、最终审批、技术评审、采购、推动者等角色。同一人可以有多个角色，同一角色也可以有多人；人物可以分别参与不同项目。外部合作单位需明确加入本项目的参与单位后，再选择其联系人。</p><p>角色之外，补“关注点”“下一步”“接触情况”和原话依据。不要仅凭“领导”“主任”的职务认定其有审批权。归档角色保留历史；需要恢复时重新核对本项目关系。</p><div class="expect"><strong>检查结果</strong>打开项目甲和项目乙，看到各自的角色、依据和项目资料；改项目名称、阶段或金额时不丢决策关系。</div></div>
+    <div class="step"><h4><span class="step-no">3</span>日常说话，逐步积累画像</h4><p>继续用首页一句话、聆记录音材料、交流复盘和 AI 讨论记录。原文归到单位后，后台持续生成“待核对画像”，按单位、联系人或项目提出候选。第一次开启先建立扫描起点；想补整理以前的交流，点“整理已有交流”。未配置真实模型时会显示“规则提取候选”，不能把它当作完整理解。</p><p>点“逐项核对”，先选具体的人或项目，查看当前资料与新原话，再确认或不采用。金额、采购时点、预算审批等项目资料留在该项目；个人偏好留在对应联系人；明确的决策权限进入项目决策关系核对。旧值和来源继续保留。</p><div class="expect"><strong>检查结果</strong>候选确认后才写入相应画像。两个窗口发生修改冲突时，刷新最新资料再核对，旧输入仍保留；来源原文已修改或排除时，需要重新整理。</div></div>
+    <div class="step"><h4><span class="step-no">4</span>有目的地了解客户，而非一次填完表</h4><p>在项目画像里看“下一次交流，先弄清什么”：每项目优先列出三个成交关键缺口，例如业务价值、预算是否批准、谁能批准和采购路径。知道答案就点“补充已知资料”；不确定就点“与 AI 讨论”，问题会带入该项目的讨论输入框，由你发送；需要跟进就“采纳为待办”。</p><div class="expect"><strong>检查结果</strong>补齐后缺口会减少；重复采纳打开已有待办；采纳不自动排日程，执行时间仍需你补充确认。</div></div>
+    <p>“还需要了解的关键联系人”会提示具体人物的工作目标、考核重点、关注点、职责或沟通方式。点“补充个人画像”，资料写入这个人所属单位；点“与 AI 讨论”，问题带入当前项目，由你补充后发送。每项目最多两个重点，不凭职务自动推断权限。</p>
+    <h3>三个新场景，按这个思路练</h3>
+    <ol>
+      <li><strong>同一家单位，两位王工、两个项目：</strong>在虚构“禾川数据中心”分别建“技术部王工”和“采购部王工”。数据库加密项目里前者负责技术评审、后者负责采购；密码机项目里采购部王工可同时承担预算决策。逐个打开项目核对，不能把一个项目的预算和权限复制到另一个。</li>
+      <li><strong>集团和子公司共同采购：</strong>虚构“岚川集团”下建立“岚川制造”；项目放在制造公司，加入集团为本项目采购参与单位。选择制造公司的技术人员和集团的采购人员；若涉及外部集成商，明确加参与单位并写依据，再加其联系人。</li>
+      <li><strong>复盘发现旧信息不对：</strong>先保存“试点预算尚未批准”，后来记录“客户确认预算已经批准，采购会需再确认”。整理后核对新原话、项目归属和旧值；更新本项目资料，再把“确认采购会时间”采纳为待办，明确时间后安排。不要因为模型候选里提到日期就认为日程已生效。</li>
+    </ol>
+    <h3>公开资料怎样辅助画像</h3>
+    <p>用“粘贴公开资料”保存地址、发布日期和原文，核对单位身份与时效后作为观察。配置公开检索服务后可点“检索公开资料”；在“自动整理与官方域名”核对域名并开启自动检索后，后台按周期辅助补充单位背景。公开资料始终先形成候选，不自动成为内部项目预算或个人决策权。</p>
+    <div class="note warm"><strong>当前启用范围</strong><p>演练版没有真实联网或模型理解，新场景建议通过手工建立和补充体验流程。正式本机版沿用已有模型配置；官方 DeepSeek API 的公开检索会复用已有配置；可选 <code>PROFILE_WEB_SEARCH_API_KEY</code> 使用 Tavily。没有可用联网通道时仍可粘贴公开原文。发布日与抓取日分别保留，未知发布时间不会用抓取时间替代。</p></div>
+    <a class="back" href="#contents">回目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="limits">
+    <h2>11 · 当前限制与使用速查</h2>
+    <div class="table-wrap"><table><thead><tr><th>当前范围</th><th>可以怎样使用</th><th>不要据此推断什么</th></tr></thead><tbody>
+      <tr><td>本机与演练入口</td><td>正式8765与本轮演练8769使用独立资料；旧8766/8768资料继续保留。</td><td>127.0.0.1是本机地址，不能据此认为另一台手机已可外网访问。</td></tr>
+      <tr><td>本机提醒</td><td>在“待落实安排”看推进点及持久网页提示，在“日程”看执行安排。未设提前提醒仍可有日程。</td><td>本机模式到点不发送企微通知；网页提示不等于手机推送送达。</td></tr>
+      <tr><td>聆记</td><td>按完整标题读取可访问的全文；也可粘贴已有文字。</td><td>当前连接没有自动发现新录音所需的列表／搜索／完成事件接口。</td></tr>
+      <tr><td>专业语音识别</td><td>配置实际服务后录音或上传短音频，核对转写。</td><td>入口和热词就绪不代表服务已联通，也不代表识别准确率已经验证。</td></tr>
+      <tr><td>演练模型</td><td>重放本页指定新增句或预置动作句式；自由说明可保存原文并手动核对。</td><td>不支持任意文本的真实AI理解；不能据此认为DeepSeek调用、ASR、企微发送已经验收。</td></tr>
+      <tr><td>未知日期、金额与审批</td><td>保留未知与待核实，之后补明确依据。</td><td>保存时间不是发生时间；空金额不是0；估算不是预算批准。</td></tr>
+      <tr><td>行业案例</td><td>练习数据安全、加密、签名验签、密钥管理的客户跟进。</td><td>案例是虚构销售情境，不是给特定客户作出合规或技术验收结论。</td></tr>
+    </tbody></table></div>
+    <h3>记住这张按钮表</h3>
+    <div class="table-wrap"><table><thead><tr><th>我现在想做什么</th><th>准确入口与按钮</th><th>完成后检查</th></tr></thead><tbody>
+      <tr><td>记一段原话</td><td>首页告诉秘书；或记录方式 → 随口记 · 客户资料 → 帮我整理</td><td>原文、客户、事实／观察和行动。</td></tr>
+      <tr><td>补客户资料</td><td>资料草稿 → 确认写入客户档案</td><td>字段确实写入；日程另需确认。</td></tr>
+      <tr><td>决定一项建议</td><td>核对 → 采纳为待办／等待事项</td><td>未完行动或等待反馈；尚未随意排期。</td></tr>
+      <tr><td>安排具体执行</td><td>补充具体时间／调整当前安排 → 保存待确认安排 → 确认加入日程</td><td>时间、时区、用时与当前生效日程。</td></tr>
+      <tr><td>完成跟进并接下一步</td><td>完成跟进并记结果 → 完成本次并保存结果 → 继续下一步 / 补时间</td><td>旧事项完成、结果可查、下一步只按明确约定排期。</td></tr>
+      <tr><td>变更原安排</td><td>原事项“这次沟通 / 进展” → 保存并整理本次沟通</td><td>提案针对原事项，确认前原时间有效。</td></tr>
+      <tr><td>取消原安排提案</td><td>确认取消原安排／保留原安排，不执行取消</td><td>取消或保留的是哪一条原安排。</td></tr>
+      <tr><td>核对项目归属</td><td>关联 / 调整项目归属 → 保存明确归属</td><td>客户正确、项目正确、既有原文和日程保留。</td></tr>
+    </tbody></table></div>
+    <p class="footer">文案依据为本轮公开前端、Windows 本机使用说明、2026-10-03公开验收记录及公开虚构演练清单。复制按钮受浏览器权限限制时会选中文字，可按 Ctrl+C 或长按复制。部分标题或状态会随实际处理结果变化，请以当前页面为准。本手册不包含真实客户资料或正式口令，也未把说明性步骤写成实际截图验收。</p>
+    <a class="back" href="#top">回到开头 ↑</a>
+  </section>
+  <p id="copy-status" class="screen-reader" role="status" aria-live="polite"></p>
+  <section class="chapter" id="customer-timeline">
+    <h2>客户 / 联系人跟进历程：从上次交流继续推进</h2>
+    <p>进入历程后，“记一句话 / 语音输入”和“讨论下一步”就在对象名称下方，手机也能直接使用。保存后会显示本次回执，原项目、筛选和页码保留。</p>
+    <p>项目、类型或关键词调整后点“应用筛选”，搜索框也可按 Enter。“当前显示”会说明已应用的条件；刷新中输入的新词保留为未应用草稿。AI 失败仍可回看原始提问并重试；日程冲突原因会在弹窗内显示，调整时间或用时后再确认。</p>
+    <p>跨页或搜索可保留最多 6 条讨论依据；切换项目时清空。保存新原话后，即使当前筛选看不到它，也可点“回看刚保存的原话”。从历程打开待办并保存后，可返回原对象、筛选和阅读位置。</p>
+    <p>检查客户或团队的进展，与自己执行行动的时间分开；截止日期也不会自动变成日程。预约取消或日程结束后，未落实的事项仍保留，真正完成或撤回时请记下推进结果。</p>
+    <p>归档项目的旧交流仍可回看，开展新活动前先恢复项目和当前人物关系。长记录在 AI 讨论中可能采用首尾节选，关键判断请打开完整来源核对；完整原文一直保留。</p>
+    <p>打开“客户”，进入一个单位，默认先看“跟进”：下一步行动、等待反馈和最近记录。顶部“记进展”“AI讨论”“跟进历程”随滚动保留；录音 / 上传语音和新建客户交流在“更多”里。</p>
+    <p>四个分区按使用目的划分：“跟进”看下一步与最近记录；“联系人”找人并进入这个人的历程，画像等维护操作可展开；“项目”分别维护每个项目的金额与决策关系；“资料”核对单位资料和画像候选。切换分区保留阅读位置，保存联系人或项目后会定位刚保存的卡片。</p>
+    <p>要看具体人，进入“联系人”，按姓名和部门辨认，再点卡片“跟进历程 / 讨论下一步”。单位看本单位的记录；联系人看直接沟通和明确与他有关的记录。</p>
+    <div class="step"><h4><span class="step-no">1</span>先看上次说了什么、哪些事没落实</h4><p>顶部摘要显示最近直接沟通、“未完成行动”和“等待反馈”。未完成行动不要求已经约定时间；无时间的下一步也可以继续跟进。下面按时间回看交流、我的思考、AI 讨论及落实结果。可按项目、类型、关键词筛选；点原文按钮回到录音材料、交流、记录或原讨论。</p><p class="note">“记录于”是保存日期，不是拜访日期。实际时间未知会明确标出；同一场录音、转写和纪要在一张交流卡里显示，保留各自原文入口。</p></div>
+    <div class="step"><h4><span class="step-no">2</span>新增一句话，或补齐旧记录的相关人</h4><p>点“记一句话 / 语音输入”，选“沟通交流”或“我的思考”，写下原话后保存。当前联系人与已选项目会带入；不用再输入精确客户名称。日期可留空。可用手机输入法语音、粘贴聆记转写；专业语音识别已配置时可转写录音，先核对文字再保存。</p><p>旧资料没有参会人信息时，不会自动算作某人的沟通。点记录卡的核对入口，或者原记录 / 客户交流的“核对沟通时间 / 相关人”，选择实际参与人和“关于此人”。同名提及仅供核对，项目成员也不代表每次到场。</p><p>隔天复盘选择“我的思考”，可关联原交流；不会改成原会议的日期。来源原话发生修正后，旧人物关联需要重新核对。</p></div>
+    <div class="step"><h4><span class="step-no">3</span>围绕这个人或客户和 AI 讨论下一步</h4><p>点“讨论下一步”，可选几条重要历史带入，或使用当前范围的最近记录。系统打开讨论并带入对象与项目；你再写下问题并发送。开始讨论不会直接发消息或建立行动。</p><p class="quote">例如：“结合上次王工对部署边界的要求和我的判断，下次回访先准备什么，怎么验证他真正担心的点？”</p><p>AI 回复可列行动、待核实问题及风险。你的个人思考和历史 AI 建议会保留性质；不会变成客户已确认事实。资料修正后，旧建议会提示重新讨论与核对。</p></div>
+    <div class="step"><h4><span class="step-no">4</span>采纳行动，补时间，记录结果</h4><p>点“核对后采纳为待办”，待办会出现在当前客户 / 联系人的未完行动中。打开待办补时间，再明确确认加入日程；没有时间先留待办。完成后记实际结果，历程会显示落实反馈；后续回访从这个结果继续。</p></div>
+    <h3>三个练习场景</h3>
+    <ol><li><strong>同一场多人会议：</strong>王工实际参与，李经理只是被讨论。给王工选“直接沟通”，李经理选“关于此人”。两人能回看同一来源，李经理的最近沟通不会被这场会谈更新。</li><li><strong>会后复盘：</strong>第二天记录“我觉得王工更担心上线风险，还需当面核实”，选我的思考并关联昨天的交流。时间轴保留第二天日期；AI 讨论结合原话与想法提出核实动作。</li><li><strong>同一个人跟多个项目：</strong>先看此人全部历程，再筛选当前项目讨论。不同项目的预算、角色和约定分别看；跨单位参与需先明确项目关系。</li></ol>
+    <p class="note warm">演练回复是离线示例，正式 AI 与专业语音识别的准确性取决于实际服务配置。本机版日程在后台查看，尚不发送企业微信到点通知。</p>
+    <a class="back" href="#contents">回到目录 ↑</a>
+  </section>
+  <section class="chapter" id="secretary-workspace">
+    <h2>让秘书准备，核对后落实</h2>
+    <p>秘书既能记录事实，也能理解你的工作目标。准备稿可以修改、保存、离开后再回来；保存准备稿不改正式资料，确认所选内容才采用。未指定时间的行动保持未排期。</p>
+    <div class="note"><strong>放下准备稿，之后从哪里接着做</strong><p>先点“保存准备稿”，之后从顶部“核对”找到“继续核对这份准备稿”。卡片会显示客户、联系人、项目或原待办，打开的是同一份稿，原输入、编辑和选中内容都会保留。全部采用或取消后，它会离开待核对；采用后的待办仍可在“这一步从哪里来”回看原准备稿或原 AI 讨论。</p><p>交流整理稿也能从顶部“核对”恢复。想暂时收尾，先保存修改，再点“本次先整理到这里”：只从待核对中移出，原文、已经采用的待办和日程保留；以后从原记录继续整理即可。</p><p>采用AI建议或交流中的下一步时，可在“这项待办明确关联谁”选择姓名、部门和单位。选择只关联未来行动，不代表已经交流；文字沟通线索不会自动选中同名的人。没选人也可以先存待办，再从详情补充。</p><p>没有说预计多久，用时可以空着，先保存未排期待办。确认具体新日程时，再填写预计用时；截止日期、检查日期和具体日程分别核对。</p></div>
+    <div class="step"><h4><span class="step-no">1</span>先用一句话说目标</h4><p>首页输入“帮我准备下次拜访QA密码行，重点核实接口范围”，点“告诉秘书”。秘书识别这是准备目标，给出已有单位和项目候选；核对后继续。交流叙述如“今天李工说预算尚未审批”仍会保存为原话记录。</p><div class="expect"><strong>成功时看到什么</strong>准备、讨论或查询目标没有冒充客户交流；候选名称不必与你说的简称完全相同。没有确定对象时选择已有单位，不会自动创建同名单位。</div></div>
+    <div class="step"><h4><span class="step-no">2</span>一份输入，一处核对</h4><p>打开原记录、材料或客户交流，点“核对秘书准备稿”。按实际内容展示资料、相关人、行动和安排，原文与发生时间可以对照。修改有用建议、勾选本次要采用的项，点“确认所选内容与安排”。也可以只保存准备稿。</p><p>归属不明时先选具体的人或项目；公开观察不会直接变成客户事实。改过归属需要先保存，对照该对象的已有资料后再确认。结果回执会指出已采用、需要核对或失败的内容，成功项不会因重试重复创建。</p></div>
+    <div class="step"><h4><span class="step-no">3</span>会前准备与会后复盘</h4><p>从客户的跟进页、项目总览或联系人历程点“准备拜访／准备这次沟通”，自动带当前对象；先看已有承诺、未完事项、材料和少量问题。想调整本次要问什么，点“修改本次要问的问题”，页面会滚动到第一项可编辑行动的“推进说明”。把问题改成自己的话，例如“先问系统负责人：兼容验证要覆盖哪两套系统、由谁确认结果？”，再点“保存准备稿”；需要落地时另行勾选该行动，确认采用。</p><p>这个入口只把光标带到说明框，不覆盖你已写的内容，也不会替你勾选、保存或建立待办。没有可编辑行动时不会提供该入口；已采用的行动继续从待办详情修改。会后用“会后复盘”补实际交流与自己的判断，建议核对后才能变成下一步。</p><p>联系人准备只使用直接交流和明确与他有关的内容。项目中的其他人不会因此自动算作参会；需要扩展背景可回到单位或项目维度。</p></div>
+    <div class="step"><h4><span class="step-no">4</span>给旧行动记实际结果</h4><p>打开待办，点“整理推进反馈”，填写实际进展。全局入口先选原待办。新准备稿把第一项推进建议放进“下一步”供你修改，展开“最初建议”可对照依据；它不代表客户已经反馈，也不会自动建立行动。核对实际结果、对原事项的处理、下一步和谁来推进，再勾选确认；时间未知继续留空。</p><p>只收到一部分反馈，例如测试条件已有、采购牵头人仍未知：选择“部分已落实”，分别填写已落实和仍待跟进的内容。确认后已落实部分单独留结果，原事项继续跟进剩余部分，原话保留；不会重复建立一份剩余待办，也不会同时采用第三项建议。若原事项已有安排，先核对旧安排再拆分。</p><p>长段反馈会明确标出结果节选，并展开完整原话。请特别核对结尾的未完成条件，再把“这次结果”改成你确认的表达。保存准备稿只保留编辑，正式结果需另行确认。</p><div class="expect"><strong>成功时看到什么</strong>回执可“回看原事项与反馈”或“打开接续待办”；部分落实时分别打开已落实和剩余部分。选择继续或等待不会完成原事项；完成日程也不等于业务已经落实。快捷“完成并记结果”中，可顺手填写下一步并明确选责任人。</div></div>
+    <div class="step"><h4><span class="step-no">5</span>把日周月安排放在一起看</h4><p>首页或“总览 → 我的工作”点“今日计划／本周计划／本月计划”。可修改起始日期和重点，秘书展示本人行动、等待反馈、未排期及已有日程。准备稿中的数量是准备时快照；实时情况看总览或日程。</p><p>选择要安排的旧事项，填具体时间再确认；调整已有安排会展示原时间，需要单独核对。时间冲突时保留待办与准备稿，原安排不会被覆盖。无真实模型时页面明确显示规则准备。</p></div>
+    <div class="cards">
+      <article class="card"><h3>案例A · 同次现场录音＋隔日复盘</h3><p>在8769的“客户交流”找到“QA现场录音与隔日复盘” → 核对秘书准备稿 → 对照两份原文与日期 → 仅选我承诺整理的接口问题清单。预算未批准、个人判断先试点，分别保留依据；不要当作采购承诺。</p></article>
+      <article class="card"><h3>案例B · 拜访前讨论，再改成行动</h3><p>打开“QA合成密码银行” → 准备拜访，写“这次先了解兼容验证和采购角色” → 查看问题 → 带入AI讨论并发送 → 点建议的采纳入口，修改标题与负责人后采用。原建议及依据仍保留。</p></article>
+      <article class="card"><h3>案例C · 等待客户，不挤进个人日程</h3><p>点“本周计划” → 找到“QA等待接口清单” → 填检查日期、确认 → 返回原待办核对 → 客户有反馈后点“整理推进反馈”，明确继续、等待或完成，再给新下一步补时间。</p></article>
+    </div>
+    <details id="multiple-project-people"><summary>同一个单位、同一个人参与不同项目，如何继续跟进</summary><ol><li>单位层级记录行政隶属。分别建立项目，在各项目“谁参与、谁决定”中核对参与人角色；职务不自动代表预算或审批权。</li><li>角色编辑窗口上下都显示项目、所属单位和联系人。同一个人的A技术评审、B业务负责人分别保存；未知权限先留空。</li><li>从联系人探索问题或历程“讨论下一步”进入，秘书带入这个人和当前项目。左侧可回看项目范围、本项目角色与依据；思考、提及与实际直接交流分别保留。</li><li>录音或补充原文使旧确认失效时，按提示核对具体场次的项目，再核对相关人和发生时间。保存后返回原交流，显式重新整理，再采用新稿；旧行动和日程不自动改变。</li><li>历史参与单位恢复会预填原角色和依据，供你核对后恢复。隐式主单位可补充作用，不提供无法执行的归档选项；归档项目先恢复再改变参与关系。</li></ol><p>“我的思考”详情明确标为个人判断，不能把它当客户反馈。AI讨论需你点击发送，建议需核对后采纳，具体时间另行确认。</p></details>
+    <details id="recording-recap-workflow"><summary>现场录音、隔日复盘，如何接成下一步</summary><ol><li>现场用聆记录音，回到材料页按完整标题读取，或粘贴已经核对的转写。填写实际发生时间；不确定就留空。记录时间由系统保存。</li><li>先核对行业错字与人物，将材料归入对应交流。人工修正与首次来源原文分别保留；纠错不新增一次客户拜访。</li><li>隔天想到新判断，打开原交流添加“我的复盘”。说明是在复述原交流还是后来的新情况；个人判断保留为观察，不替客户承诺。</li><li>补充来源后，打开秘书准备稿。如果显示来源变化，点“按最新来源重新整理”；“刷新状态与最新资料”只读取进度。旧编辑保留供对照，重新整理不会自动采用。</li><li>先看下一步与当前待核对项，历史画像在“已处理 / 历史画像”中展开。核对行动项目、责任人与依据，修改后选择采用。未约定执行时间时保留未排期。</li></ol><p>涉及不同项目或项目关联需要重新核对时，先在原来源核对明确归属，再重新整理。不要用第一份录音的项目代替所有行动项目。已保存事项从原待办继续跟进，原录音和版本仍可追溯。</p></details>
+    <details id="work-plan-workflow"><summary>我的工作、日周月计划：从查看到确认的操作顺序</summary><ol><li><strong>先看要推进什么。</strong>在“总览 → 我的工作”打开本人行动、等待反馈或逾期的对应列表。队列可以继续搜索、分页和查看详情；回到全部记录时再看其他类型。等待反馈包含已经确认的推进结果，未采用的准备稿不会改变正式状态。</li><li><strong>再看准备哪个时间范围。</strong>选择今日、本周或本月计划，核对参考日期和页面显示的实际窗口。默认日期随期间切换；自己修改的日期保留。要接着改旧稿，使用“继续最近计划”，核对它的日期范围；准备当前范围则使用当前计划入口。</li><li><strong>分清谁执行、我何时检查。</strong>自己负责的行动可安排执行时间；等客户或同事反馈时，可给自己安排一次检查，原责任仍属于客户或同事。只知道检查日期就只填日期，不生成一个猜测时刻。没有明确时间的事项继续留在待办。</li><li><strong>时间和依据分别核对。</strong>补充用时或日期是你本次确认的信息，不会冒充原客户说过的话。原资料与历史依据可回看；修改一个时间字段，不改其他未修改字段的独立依据。取消某个日期时，这个日期的依据一并清除。</li><li><strong>保存稿，再确认所选安排。</strong>暂时没核对完可保存准备稿后关闭，之后从同一计划入口继续最近稿，或从顶部“核对”恢复。只有确认所选项才改变日程。部分项成功、部分项冲突时，先看逐项回执；成功项重试不会重复建立。</li><li><strong>遇到冲突，按具体时段修改。</strong>页面会说明冲突事项和起止时间。修改拟安排后重新核对；冲突中的拟安排仍未生效，原日程保持。重开准备稿也会保留这个状态。</li><li><strong>日程回到日、周、月查看。</strong>卡片显示有效项目范围；跨午夜的安排会在所占的日期显示延续提示，原开始和结束时间仍可对照。日程完成、取消安排、业务落实是不同操作：业务结果从原待办记录，取消日程后未完成的业务仍要继续跟进。</li></ol><p>同时打开两个窗口时，旧窗口不能覆盖后来核对的安排。遇到“资料已变化”，保留原输入，刷新核对最新状态后再提交。这些流程在8769的隔离示例中演练；正式AI、语音、搜索和企业微信提醒需要相应服务配置。</p></details>
+    <details><summary>一整天怎么用：随记、讨论、安排、回来报结果</summary><ol><li>早上打开“总览 → 我的工作”，先看自己的行动、等待反馈与待整理；再看具体项目卡点。</li><li>现场把客户原话、自己的承诺和个人判断一起记下，或用聆记录音。先保存，不必当场填全画像。保存成功后可离开，回来从已保存记录继续；失败的输入仍可续办。保存过程中再输入的新话不会随旧回执一起清空。</li><li>有空核对必要对象。从联系人历程带原文讨论“下一步先核实什么”。采用表单先看行动、责任和相关人；需要时展开材料与完成标志。联系人整体讨论可显式选此人参与的本单位项目；没有确定项目就先不选。要让AI重新考虑某项目预算或采购条件，另在该项目范围讨论。</li><li>行动未知时间先留待办；要执行时在日、周、月计划补时段、用时，再确认。客户说还要问运维时，保留客户等待，可给自己设回访检查日期；不要替对方补回复时刻。</li><li>回来记结果：例如“资料已发；测试条件已收到；审批人仍未知”。只落实一部分时核对已落实结果与原事项剩余工作，不能完成整条等待项。新想法先作为项目研判资料，确有具体下一步才采用行动。</li></ol></details>
+    <details><summary>改标题、核对角色：哪些操作需要重新确认</summary><p>有完整正文的独立随记，仅整理易读标题且客户、正文和性质都没变时，保留此前有效的项目和人物关系。原来已失效、归档、合并或历史来源不会因此恢复；仅靠标题记录内容的条目仍需核对。旧AI整理继续按原来源版本检查，不能把整理标题当成重新认可旧建议。</p><p>在项目决策关系中，可先记未知或个人观察。明确了解到某人的本项目角色后，填角色、原话依据及实际接触情况，再显式勾选本次核对。系统记录的是你本次核对的时间，不是会谈发生时间，更不是客户新承诺。普通修改备注不会刷新核对时间；角色、依据或接触等关键信息变化但未重新核对时，旧核实状态撤回，提醒继续了解。预算、采购和审批权限仍分别核实，不从职务推断。</p><p>本次核对控件与采用时选项目，需要相应后台版本返回能力信息。旧后台缺少该能力时不会发送不支持的新字段；正式服务切换后再验收完整效果。</p></details>
+    <details><summary>研究、语音和聆记的能力边界</summary><p>单位资料的“公开资料”入口可填写公开链接，点“读取链接正文”，核对正文和年份后保存候选；需登录、附件或脚本网页可手动粘贴。深度搜索需要真实搜索服务配置。现场录音可继续用聆记；当前按完整标题拉取并自动整理，列表／完成事件接口尚未验证，不能自动发现所有新录音。专业语音服务已配置时，网页停止录音后自动转写；未配置时用输入法语音或聆记文字。演练中的AI和网页均为合成，不访问真实服务。</p></details>
+    <a class="back" href="#contents">回到目录 ↑</a>
+  </section>
+
+  <section class="chapter" id="detail-progress-guide" aria-labelledby="detail-progress-guide-title">
+    <h2 id="detail-progress-guide-title">待办与安排详情：先处理这一件事</h2>
+    <p>打开详情，按“标题与对象 → 当前情况 → 本次推进 → 相关信息与准备 → 来源与历史”阅读。标题只显示一次，长标题可在原位置展开；完整资料和历史按需打开。</p>
+    <div class="step"><h4><span class="step-no">1</span>先看当前情况，再补一句进展</h4><p>普通待办默认“记录进展”。例如写“已联系，客户周五回复”，点底部唯一的“保存进展”。即使文字里说“这个完成了”，也只是追加进展；若要结束待办，请明确更换本次处理为“完成跟进并保存结果”。</p><div class="expect"><strong>成功时看到什么</strong>回执说明进展已保存，当前情况和历史更新，原待办与日程状态保持。完成目的另列将结束的日程和拒绝的提案，核对范围后才提交。</div></div>
+    <div class="step"><h4><span class="step-no">2</span>在同一个处理区选择本次目的</h4><p>用“更换本次处理”选择记录、整理、补充安排、调整推进点或明确完成。一次只提交所选目的，其他草稿独立保留。安排的“补充安排 · 秘书理解”可以一句话补齐信息；“只记录进展”保留当前检查点。附件留在补充安排草稿，切换到不支持附件的目的时不会随此次发送。</p><div class="expect"><strong>成功时看到什么</strong>“原话已保存，正在整理”只表示原话已接收；整理结束后看当前真实安排。只有“已加入正式日程”等生效回执及真实执行时间才表示已经落实。失败可以重试已保存原话，不需要重新录一遍。</div></div>
+    <div class="step"><h4><span class="step-no">3</span>区分执行、期限与推进点</h4><p>执行时间表示什么时候去做；确定期限表示何时前定下来；下一推进点表示何时再问及问什么。它们分别编辑。“周五再问”不会移成周五见面。有可靠关联安排时，从“关联安排与日程”进入对应活动；独立旧待办仍可保存待确认提案，随后明确确认。若同一记录可能含多次活动，点“核对全部关联活动”，按真实活动选择。</p><div class="expect"><strong>成功时看到什么</strong>改期尚在商量时，旧有效时间与拟改时间并列。暂停或放弃协调保留旧日程；撤销当前日程、取消整次活动和完成跟进分别显示自己的影响范围。</div></div>
+    <div class="step"><h4><span class="step-no">4</span>回看资料后返回继续写</h4><p>相关资料、原话和历史放在下方折叠区。进入安排或来源后，用头部“返回待办详情 / 返回安排详情”回到原位置，保留草稿、焦点和展开状态。资料版本有变化时，先点“保留输入，重新核对”，对照最新状态重新核对授权；页面不会把旧确认自动套到新版本。</p><p>归档、删除、编辑等维护入口在“更多操作”。归档组可能同时停止多条日程，预览会列出实际范围；恢复只恢复可见性，停止的日程仍需重新安排。网络结果未知的普通进展先回看历史，明确决定后再追加，避免重复。</p></div>
+    <p class="small muted">本轮研发仅用独立合成资料验证，未操作正式客户数据。320×640、390×844 页面和电脑键盘已检查；真实手机软键盘遮挡仍需真机验证。当前版本不提供文字与结构字段跨接口的原子混合提交。</p>
+    <a class="back" href="#contents">返回目录 ↑</a>
+  </section>
+</main>
+<script>
+  (function(){
+    var input=document.getElementById('base-date');
+    var templates=Array.from(document.querySelectorAll('[data-date-template]')).map(function(node){return {node:node,text:node.textContent};});
+    function validDate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;var date=new Date(value+'T12:00:00Z');return !Number.isNaN(date.getTime())&&date.toISOString().slice(0,10)===value;}
+    function day(offset){var value=new Date(input.value+'T12:00:00Z');value.setUTCDate(value.getUTCDate()+Number(offset));return value.toISOString().slice(0,10);}
+    function update(){if(!validDate(input.value)){document.getElementById('date-feedback').textContent='请选择有效日期。';return;}templates.forEach(function(item){item.node.textContent=item.text.replace(/\{\{date:([+-]?\d+)\}\}/g,function(_,offset){return day(offset);});});document.querySelectorAll('[data-day]').forEach(function(node){node.textContent=day(node.getAttribute('data-day'));});document.getElementById('date-feedback').textContent='示例已按 '+input.value+' 展开。';}
+    var requested=new URLSearchParams(window.location.search).get('base');if(requested&&validDate(requested))input.value=requested;
+    input.addEventListener('change',update);update();
+    document.querySelectorAll('[data-copy]').forEach(function(button){button.addEventListener('click',async function(){var source=document.getElementById(button.getAttribute('data-copy'));var initial=button.textContent;try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('clipboard-unavailable');await navigator.clipboard.writeText(source.textContent);button.textContent='已复制';document.getElementById('copy-status').textContent='原话已复制，可粘贴到演练版。';}catch(error){var selection=window.getSelection();var range=document.createRange();range.selectNodeContents(source);selection.removeAllRanges();selection.addRange(range);button.textContent='已选中文字';document.getElementById('copy-status').textContent='已选中原话，请按 Ctrl+C 或长按复制。';}window.setTimeout(function(){button.textContent=initial;},2200);});});
+  })();
+</script>
+</body>
+</html>

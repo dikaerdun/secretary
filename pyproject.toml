@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "personal-wecom-secretary"
+version = "0.1.0"
+description = "A personal voice inbox and durable reminders for WeCom"
+requires-python = ">=3.11"
+dependencies = [
+  "wecom-aibot-python-sdk==1.0.1",
+  "httpx>=0.28,<0.29",
+  "python-dotenv>=1.0,<2",
+  "tzdata>=2025.2",
+  "aiohttp>=3.12,<4",
+  "pypdf==6.19.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+include = ["secretary*"]
+
+[tool.setuptools.package-data]
+secretary = ["static/*.html", "static/*.css", "static/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,51 @@
+.detail-dialog:has(.detail-progress){width:min(840px,calc(100vw - 48px));height:calc(var(--dialog-viewport-height,100dvh) - 48px);max-height:calc(var(--dialog-viewport-height,100dvh) - 48px);overflow:hidden}
+#detail-content:has(.detail-progress){height:100%;min-height:0}
+.detail-progress{position:relative;height:100%;display:flex;flex-direction:column;min-height:0;font-size:15px;line-height:1.6}
+.detail-progress .detail-progress-header{position:relative;padding:20px 24px 14px;flex:none;gap:16px;border-bottom:1px solid #e0e7e3}
+.detail-progress-header>div{min-width:0;flex:1}
+.detail-progress .eyebrow{margin:0 0 4px;font-size:12px}
+.detail-progress .detail-progress-title{font-size:22px;line-height:1.35;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.detail-progress-title.expanded{display:block;overflow:visible}
+.detail-progress .detail-progress-scroll{flex:1;min-height:0;overflow-y:auto;padding:18px 24px 24px;scroll-padding:16px}
+.detail-progress [data-detail-zone]{margin:0 0 22px}
+.detail-progress [data-detail-zone="A"]{margin:0}
+.detail-progress h3{font-size:16px;margin:0 0 8px}
+.detail-progress p{margin:6px 0}
+.detail-progress .detail-processing{background:#f4f7f4;border:1px solid #e1e8e1;border-radius:12px;padding:14px}
+.detail-progress textarea{min-height:92px;width:100%;resize:vertical}
+.detail-progress .detail-progress-footer{position:relative;flex:none;min-height:68px;padding:12px 24px;border-top:1px solid #e0e7e3;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-right:185px}
+.detail-progress .detail-primary-button{position:absolute;right:24px;bottom:12px;min-height:44px;z-index:3}
+.detail-progress button,.detail-progress summary,.detail-progress select,.detail-progress input:not([type=hidden]){min-height:44px}
+.detail-progress .flow-composer{margin:0;gap:8px}
+.detail-progress .flow-submit-row .detail-primary-button{width:auto!important}
+.detail-progress .detail-more>div{position:absolute;bottom:65px;left:24px;max-height:45vh;overflow:auto;background:#fff;border:1px solid #d9e2db;box-shadow:0 8px 28px #163d3320;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;z-index:5}
+.detail-progress [data-detail-zone="D"]>details,.detail-progress [data-detail-zone="E"]>details{border-top:1px solid #e2e8e3;padding:8px 0}
+.detail-progress summary{display:flex;align-items:center;cursor:pointer;font-weight:600}
+.detail-progress summary::before{content:'▸';margin-right:8px}
+.detail-progress details[open]>summary::before{content:'▾'}
+.detail-progress .arrangement-summary{background:none;border:0;padding:0}
+.detail-progress .arrangement-times{display:block}
+.detail-progress .arrangement-times>div{padding:6px 0;border:0}
+.detail-progress .form-error:empty,.detail-progress [data-detail-receipt]:empty{display:none}
+.detail-progress .form-error:not(:empty){padding:8px;border:1px solid #b55b50;border-radius:6px}
+.detail-progress [data-detail-receipt]:not(:empty){margin-top:10px;padding:8px;background:#eaf2e6;border-radius:6px}
+.detail-progress .detail-purpose-bar label{display:flex;align-items:center;gap:10px;margin:0;min-width:0;flex:1;font-size:14px}
+.detail-progress .detail-purpose-bar select{flex:1;min-width:0;width:auto;margin:0}
+.detail-progress .detail-purpose-bar{display:flex;align-items:center;margin-bottom:8px}
+.detail-progress .detail-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;padding:0;margin:-1px}
+.detail-progress .form-hint,.detail-progress small{font-size:12px;line-height:1.5}
+.detail-progress .detail-return{font-size:13px;margin:0 0 4px;min-height:44px}
+.detail-progress .detail-impact{border-left:3px solid #9eab86;padding-left:12px;margin-bottom:10px}
+@media(max-width:760px){
+ .detail-dialog:has(.detail-progress){width:100vw;height:var(--dialog-viewport-height,100dvh);max-height:var(--dialog-viewport-height,100dvh);margin:0 auto;border-radius:0}
+ .detail-progress .detail-progress-header{padding:14px 16px 10px}
+ .detail-progress .detail-progress-title{font-size:18px}
+ .detail-progress .detail-progress-scroll{padding:14px 16px 20px}
+ .detail-progress .detail-progress-footer{min-height:66px;padding:10px 150px max(10px,env(safe-area-inset-bottom)) 16px}
+ .detail-progress .detail-primary-button{right:16px;bottom:max(10px,env(safe-area-inset-bottom));max-width:calc(100% - 140px)}
+ .detail-progress input,.detail-progress textarea,.detail-progress select{font-size:16px;max-width:100%;min-width:0}
+ .detail-progress{font-size:14px}
+ .detail-progress .detail-processing{padding:12px}
+ .detail-progress .detail-more>div{left:16px;right:16px}
+ .detail-progress .arrangement-time-fields{grid-template-columns:1fr}
+}
